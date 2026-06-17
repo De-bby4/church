@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const LINKS = [
-  { label: "About Us",     href: "#about" },
-  { label: "Our Pastors",  href: "#pastors" },
-  { label: "Giving",       href: "#giving" },
-  { label: "Plan A Visit", href: "#visit" },
-  { label: "Ministries",   href: "#ministries" },
-  { label: "Calendar",     href: "#calendar" },
+  { label: "About Us",     href: "/about" },
+  { label: "Our Pastors",  href: "/#pastors" },
+  { label: "Giving",       href: "/#giving" },
+  { label: "Plan A Visit", href: "/visit" },
+  { label: "Ministries",   href: "/#ministries" },
+  { label: "Sermons",      href: "/sermons" },
 ];
 
 export default function Navbar() {
@@ -19,7 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile menu whenever a link is tapped
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
@@ -29,7 +29,7 @@ export default function Navbar() {
       }`}
     >
       {/* Logo + name */}
-      <a href="#top" className="flex items-center gap-3 flex-shrink-0" onClick={handleLinkClick}>
+      <Link to="/" className="flex items-center gap-3 flex-shrink-0" onClick={handleLinkClick}>
         <div className="w-10 h-10 rounded-lg bg-brand flex items-center justify-center">
           <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
             <path d="M12 2 4 7v10l8 5 8-5V7l-8-5Z" />
@@ -39,22 +39,22 @@ export default function Navbar() {
         <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight">
           Citadel<br className="hidden sm:block" /> Fellowship
         </span>
-      </a>
+      </Link>
 
       {/* Desktop links */}
       <div className="hidden lg:flex items-center gap-9">
         {LINKS.map((l) => (
-          <a
+          <Link
             key={l.label}
-            href={l.href}
+            to={l.href}
             className="text-white/80 hover:text-white text-[14px] font-medium transition-colors"
           >
             {l.label}
-          </a>
+          </Link>
         ))}
       </div>
 
-      {/* Mobile menu button — toggles state */}
+      {/* Mobile menu button */}
       <button
         onClick={() => setMenuOpen((v) => !v)}
         aria-label="Toggle menu"
@@ -80,14 +80,14 @@ export default function Navbar() {
       >
         <div className="flex flex-col px-6 py-6 gap-1">
           {LINKS.map((l) => (
-            <a
+            <Link
               key={l.label}
-              href={l.href}
+              to={l.href}
               onClick={handleLinkClick}
               className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 last:border-b-0 transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
