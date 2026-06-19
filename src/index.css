@@ -1,22 +1,21 @@
 @import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @theme {
-  --color-brand: #0d9488;
-  --color-brand-light: #5eead4;
-  --color-brand-dark: #0f766e;
+  --color-brand: #c8102e;
+  --color-brand-light: #ff5a6e;
+  --color-brand-dark: #8e0a20;
 
-  --color-ink: #0a2622;
-  --color-subtle: #5b7570;
-  --color-surface: #f4faf8;
-  --color-line: #e1ede9;
+  --color-ink: #0c1d3d;
+  --color-subtle: #5b6a85;
+  --color-surface: #f5f7fb;
+  --color-line: #e3e8f0;
 
   --font-display: "Sora", sans-serif;
   --font-body: "Inter", sans-serif;
 
-  --shadow-soft: 0 8px 30px rgba(10,38,34,0.08);
-  --shadow-lift: 0 18px 50px rgba(13,148,136,0.18);
+  --shadow-soft: 0 8px 30px rgba(12,29,61,0.08);
+  --shadow-lift: 0 18px 50px rgba(200,16,46,0.18);
 
   --animate-fadeUp: fadeUp 0.7s ease both;
 
@@ -29,11 +28,6 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }
 
 html {
@@ -43,5 +37,24 @@ html {
 body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
-  color: #0a2622;
+  color: #0c1d3d;
+}
+
+/* Utility to hide scrollbars on horizontally-scrollable rows
+   (used by the mobile card swiper) while keeping scroll function */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html, body {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }

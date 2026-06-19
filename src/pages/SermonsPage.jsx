@@ -1,15 +1,15 @@
 export default function SermonsPage() {
   return (
-    <div className="pt-20">
+    <div className="">
       <section className="bg-ink py-16 md:py-20 px-6 md:px-10">
         <div className="max-w-[1200px] mx-auto text-center">
-          <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-3">
+          <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-3 ">
             Sermons
           </p>
           <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(32px,4vw,48px)] mb-4">
             Catch up on the Word.
           </h1>
-          <p className="text-white/60 text-[16px] leading-[1.8] max-w-[560px] mx-auto">
+          <p className="text-white/60 text-[16px] leading-[1.8] max-w-[560px] mx-auto  flex items-center justify-center text-center ">
             Every message goes live during our Sunday service and stays right
             here afterward — so you can watch, re-watch, or catch up anytime.
           </p>

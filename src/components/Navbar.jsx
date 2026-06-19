@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const LINKS = [
   { label: "About Us",     href: "/about" },
@@ -24,22 +25,20 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 md:px-10 h-20 transition-all duration-300 ${
-        solid || menuOpen ? "bg-ink/95 backdrop-blur-md" : "bg-transparent"
+      style={{ position: "sticky", top: 0 }}
+      className={`z-50 flex items-center justify-between px-6 md:px-10 h-20 transition-all duration-300 ${
+        solid || menuOpen ? "bg-ink/95 backdrop-blur-md" : "bg-ink"
       }`}
     >
+    
       {/* Logo + name */}
-      <Link to="/" className="flex items-center gap-3 flex-shrink-0" onClick={handleLinkClick}>
-        <div className="w-10 h-10 rounded-lg bg-brand flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-            <path d="M12 2 4 7v10l8 5 8-5V7l-8-5Z" />
-            <path d="M12 8v8M9 11h6" />
-          </svg>
-        </div>
-        <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight">
-          Citadel<br className="hidden sm:block" /> Fellowship
-        </span>
-      </Link>
+      {/* Logo + name */}
+<Link to="/" className="flex items-center gap-2.5 flex-shrink-0" onClick={handleLinkClick}>
+  <img src={logo} alt="Citadel Fellowship" className="w-12 h-12 object-contain" />
+  <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight">
+    Citadel<br className="hidden sm:block" /> Fellowship
+  </span>
+</Link>
 
       {/* Desktop links */}
       <div className="hidden lg:flex items-center gap-9">
@@ -94,3 +93,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
