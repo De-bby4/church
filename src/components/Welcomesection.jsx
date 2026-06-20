@@ -41,7 +41,7 @@ export default function WelcomeSection() {
       <h2 className="font-display font-bold text-ink leading-[1.05] tracking-tight text-[clamp(36px,5.5vw,64px)] mb-4">
         Welcome Home!
       </h2>
-      <p className="text-subtle text-[16px] leading-[1.8] text-center" style={{ maxWidth: "480px", margin: "0 auto" }}>
+      <p className="text-subtle text-[16px] leading-[1.5] text-center pb-7" style={{ maxWidth: "480px", margin: "0 auto" }}>
         Dive into our teachings, services, and community. Your journey of
         faith begins here.
       </p>

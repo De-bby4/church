@@ -6,12 +6,17 @@ import ServiceStrip from "./components/Servicestrip";
 import VisitPage from "./pages/VisitPage";
 import SermonsPage from "./pages/SermonsPage";
 import AboutPage from "./pages/AboutPage";
+import Footer from "./components/Footer"; 
+import GivingPage from "./pages/GivingPage";
+import WhatsappCta from "./components/Whatsappcta";
 
 function Home() {
   return (
     <>
       <Hero />
       <WelcomeSection />
+      <WhatsappCta />
+      <Footer />
       {/* <ServiceStrip /> */}
     </>
   );
@@ -26,6 +31,7 @@ function App() {
         <Route path="/visit" element={<VisitPage />} />
         <Route path="/sermons" element={<SermonsPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/giving" element={<GivingPage />} />
       </Routes>
     </div>
   );

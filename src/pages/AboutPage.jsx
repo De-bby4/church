@@ -27,7 +27,7 @@ export default function AboutPage() {
     <div >
 
       {/* Hero intro */}
-     <section className="relative py-35 md:py-54 px-6 md:px-10 flex flex-col items-center justify-center text-center overflow-hidden">
+     <section className="relative py-24 md:py-36 px-6 md:px-10 flex flex-col items-center justify-center text-center overflow-hidden">
 
   {/* Background Image */}
   <img

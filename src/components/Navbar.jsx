@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 const LINKS = [
   { label: "About Us",     href: "/about" },
   { label: "Our Pastors",  href: "/#pastors" },
-  { label: "Giving",       href: "/#giving" },
+  { label: "Giving",       href: "/giving" },
   { label: "Plan A Visit", href: "/visit" },
   { label: "Ministries",   href: "/#ministries" },
   { label: "Sermons",      href: "/sermons" },
@@ -34,8 +34,8 @@ export default function Navbar() {
       {/* Logo + name */}
       {/* Logo + name */}
 <Link to="/" className="flex items-center gap-2.5 flex-shrink-0" onClick={handleLinkClick}>
-  <img src={logo} alt="Citadel Fellowship" className="w-12 h-12 object-contain" />
-  <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight">
+  <img src={logo} alt="Citadel Fellowship" className="w-20 h-20 object-cover rounded-full" />
+  <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight ">
     Citadel<br className="hidden sm:block" /> Fellowship
   </span>
 </Link>

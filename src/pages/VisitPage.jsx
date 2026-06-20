@@ -1,4 +1,5 @@
 import { useState } from "react";
+import visit from "../assets/plan.png";
 
 const SERVICES = [
   { day: "Wednesday", time: "7:00 PM – 8:30 PM", label: "Midweek Service", mode: "Online" },
@@ -26,14 +27,18 @@ export default function VisitPage() {
 
   return (
     <div>
-      <section className="bg-ink py-16 md:py-20 px-6 md:px-10 text-center">
-        <p className="text-white/50 text-[12px] font-medium mb-3">
-          Home <span className="mx-1.5">/</span> <span className="text-white/80">Plan A Visit</span>
-        </p>
-        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
-          Plan A Visit
-        </h1>
-      </section>
+      <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
+  <img src={visit} alt="" className="absolute inset-0 w-full h-full object-cover" />
+  <div className="absolute inset-0 bg-ink/80" />
+  <div className="relative z-10">
+    {/* <p className="text-white/50 text-[12px] font-medium mb-3">
+      Home <span className="mx-1.5">/</span> <span className="text-white/80">Plan A Visit</span>
+    </p> */}
+    <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
+      Plan A Visit
+    </h1>
+  </div>
+</section>
 
       <section className="bg-surface py-20 md:py-28 px-6 md:px-10">
         <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-20 items-start">
