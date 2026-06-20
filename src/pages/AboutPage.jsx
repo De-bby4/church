@@ -38,7 +38,7 @@ export default function AboutPage() {
       Knowing Christ. Making Him Known.
     </h1>
     <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-    <p className="text-white/65 text-[17px] leading-[1.7] max-w-[600px] mx-auto text-center">
+    <p className="text-white/65 text-[17px] leading-[1.5] max-w-[600px] mx-auto text-center">
      Helping people find God, grow in faith, and walk in purpose — together.
     </p>
     </div>

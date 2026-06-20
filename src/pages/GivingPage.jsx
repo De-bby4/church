@@ -25,7 +25,7 @@ import giveImg from "../assets/services.jpg";
           <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(26px,3.5vw,40px)] mb-5">
             Your generosity makes a difference.
           </h2>
-          <p className="text-subtle text-[16px] leading-[1.8]">
+          <p className="text-subtle text-[16px] leading-[1.5]">
             Every gift helps us reach more people, serve our community, and
             build a place where lives are transformed. Thank you for
             partnering with us in what God is doing through Citadel Fellowship.
@@ -59,12 +59,12 @@ import giveImg from "../assets/services.jpg";
               <p className="text-subtle text-[14px] leading-[1.7] pb-5">
                 Send an e-transfer through your bank app to:
               </p>
-              <div className="bg-surface rounded-xl px-4 py-3.5 mb-2">
-                <p className="font-display font-semibold text-ink text-[15px] break-all">
+              <div className="bg-surface rounded-xl px-4 py-3.5 ">
+                <p className="font-display font-semibold text-ink text-[15px] break-all ">
                   cffinance@citadelfellowship.com
                 </p>
               </div>
-              <p className="text-subtle text-[12px]">Via any Canadian bank app</p>
+              <p className="text-subtle text-[12px]  pt-3 ">Via any Canadian bank app</p>
             </div>
 
             {/* Bank Transfer */}
