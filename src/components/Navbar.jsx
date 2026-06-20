@@ -32,10 +32,10 @@ export default function Navbar() {
     >
       {/* Logo + name */}
       <Link to="/" className="flex items-center gap-2.5 flex-shrink-0" onClick={handleLinkClick}>
-        <img src={logo} alt="Citadel Fellowship" className="w-20 h-20 object-cover rounded-full" />
-        <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight">
-          Citadel<br className="hidden sm:block" /> Fellowship
-        </span>
+        <img src={logo} alt="Citadel Fellowship" className="w-8 h-12 " />
+        <span className="font-display font-bold text-white text-[20px] leading-tight tracking-tight">
+          Citadel Fellowship
+       </span>
       </Link>
 
       {/* Desktop links */}

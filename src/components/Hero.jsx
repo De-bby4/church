@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section
@@ -50,12 +52,12 @@ export default function Hero() {
   </svg>
   Watch Live
 </a>
-          <a
-            href="#links"
+          <Link
+            to="/quick-links"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/35 text-white font-semibold text-[15px] hover:bg-white/10 hover:border-white/60 transition-all"
           >
             Quick Links
-          </a>
+          </Link>
         </div>
       </div>
 

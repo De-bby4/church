@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import { Link } from "react-router-dom";
 import aboutImg from "../assets/aboutus.jpg";
 // import visitImg from "../assets/visit.png";
 import aboutbigImg from "../assets/aboutbig.png";
@@ -52,10 +53,10 @@ export default function AboutPage() {
       <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
         Our Story
       </p>
-      <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(28px,3.5vw,40px)] mb-5">
+      <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(28px,3.5vw,40px)] pb-5">
         A family built on faith, grown through people.
       </h2>
-      <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.85]">
+      <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.5]">
         <p>
           Citadel Fellowship started with a simple conviction: church
           should feel like home. What began as a small gathering of
@@ -160,12 +161,12 @@ export default function AboutPage() {
           <p className="text-white/75 text-[15px] leading-relaxed pb-4">
             The best way to know us is to join us. We'd love to have you this week.
           </p>
-          <a
-            href="/new-here"
+          <Link
+            to="/new-here"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-brand text-white hover:bg-brand-dark font-semibold text-[15px]  transition-colors"
           >
             New Here? Start Here
-          </a>
+          </Link>
         </div>
       </section>
     </div>

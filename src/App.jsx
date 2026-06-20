@@ -14,35 +14,35 @@ import ServicePage from "./pages/ServicePage";
 import WhatToExpect from "./components/WhatToExpect";
 import ScrollToTop from "./components/ScrollToTop";
 
-function Home() {
-  return (
-    <>
-      <Hero />
-      <WelcomeSection />
-      <ScriptureStrip />
-      <WhatToExpect />
-      <WhatsappCta />
-      <Footer />
-      
-    </>
-  );
-}
+  function Home() {
+    return (
+      <>
+        <Hero />
+        <WelcomeSection />
+        <ScriptureStrip />
+        <WhatToExpect />
+        <WhatsappCta />
+        <Footer />
+        
+      </>
+    );
+  }
 
-function App() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/visit" element={<VisitPage />} /> */}
-        <Route path="/sermons" element={<SermonsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/giving" element={<GivingPage />} />
-        <Route path="/new-here" element={<NewHerePage />} />
-        <Route path="/services" element={<ServicePage />} />
-      </Routes>
-    </div>
+  function App() {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sermons" element={<SermonsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/giving" element={<GivingPage />} />
+          <Route path="/new-here" element={<NewHerePage />} />
+          <Route path="/services" element={<ServicePage />} />
+          <Route path="/quick-links" element={<WelcomeSection />} />
+        </Routes>
+      </div>
   );
 }
 
