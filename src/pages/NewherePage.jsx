@@ -28,9 +28,6 @@ export default function NewHerePage() {
           <img src={plan} alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-ink/80" />
           <div className="relative z-10">
-        {/* <p className="text-white/50 text-[12px] font-medium mb-3">
-          Home <span className="mx-1.5">/</span> <span className="text-white/80">New Here?</span>
-        </p> */}
         <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
           Welcome Home
         </h1>
@@ -41,11 +38,10 @@ export default function NewHerePage() {
         <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
           {/* Left: welcome text */}
-          <div>
-            <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(28px,3.5vw,40px)] pb-4">
-              We're glad you're here.
-            </h2>
-            <p className="text-subtle text-[16px] leading-[1.5] mb-8">
+         <div className="lg:sticky lg:top-24">
+  <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(28px,3.5vw,40px)] pb-4">
+    We're glad you're here.
+  </h2>    <p className="text-subtle text-[16px] leading-[1.5] mb-8">
               God has a purpose for your life, and we're honored to be part of
               your journey. Whether you're exploring faith for the first time
               or looking for a new church home, there's a place for you at
@@ -103,7 +99,7 @@ export default function NewHerePage() {
               Newcomer Sign-Up
             </h3>
             <p className="text-subtle text-[14px] pb-8 text-center">
-              Let us know you're coming — we'd love to connect with you.
+              Let us get to know you — we'd love to connect with you.
             </p>
 
             {submitted ? (
@@ -150,6 +146,42 @@ export default function NewHerePage() {
                     <label className="text-ink text-[13px] font-semibold mb-1.5 block">Phone Number</label>
                     <input type="tel" name="phone" required placeholder="+1 234 567 890" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
                   </div>
+
+                  {/* Home Address */}
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold mb-1.5 block">Street Address</label>
+                    <input type="text" name="street" required placeholder="123 Main Street" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-ink text-[13px] font-semibold mb-1.5 block">City</label>
+                      <input type="text" name="city" required placeholder="Guelph" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                    </div>
+                   <div>
+  <label className="text-ink text-[13px] font-semibold mb-1.5 block">Province</label>
+  <select name="province" required defaultValue="" className="w-full min-h-[48px] px-4 py-3 rounded-xl border border-line bg-surface text-ink text-sm md:text-[14px] outline-none focus:border-brand transition-all appearance-none">
+    <option value="" disabled>Select</option>
+    <option value="Alberta">Alberta</option>
+    <option value="British Columbia">British Columbia</option>
+    <option value="Manitoba">Manitoba</option>
+    <option value="New Brunswick">New Brunswick</option>
+    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+    <option value="Nova Scotia">Nova Scotia</option>
+    <option value="Ontario">Ontario</option>
+    <option value="Prince Edward Island">Prince Edward Island</option>
+    <option value="Quebec">Quebec</option>
+    <option value="Saskatchewan">Saskatchewan</option>
+    <option value="Northwest Territories">Northwest Territories</option>
+    <option value="Nunavut">Nunavut</option>
+    <option value="Yukon">Yukon</option>
+  </select>
+</div>
+                  </div>
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold mb-1.5 block">Postal Code</label>
+                    <input type="text" name="postalCode" required placeholder="N1G 1T3" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                  </div>
+
                   <button type="submit" className="w-full py-3.5 rounded-xl bg-brand text-white font-semibold text-[15px] hover:bg-brand-dark transition-colors mt-1">
                     Sign Up
                   </button>

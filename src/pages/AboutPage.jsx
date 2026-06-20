@@ -26,34 +26,21 @@ export default function AboutPage() {
   return (
     <div >
 
-      {/* Hero intro */}
-     <section className="relative py-24 md:py-36 px-6 md:px-10 flex flex-col items-center justify-center text-center overflow-hidden">
-
-  {/* Background Image */}
-  <img
-    src={aboutbigImg}
-    alt=""
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-ink/80" />
-
-  {/* Content */}
-  <div className="relative z-10 max-w-[800px] mx-auto text-center">
+    <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
+    <img src={aboutbigImg} alt="" className="absolute inset-0 w-full h-full object-cover"/>
+    <div className="absolute inset-0 bg-ink/80" />  
+    <div className="relative z-10">
     <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-4">
       Who We Are
     </p>
-
-    <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,56px)] mb-6">
+    <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,60px)] ">
       Making Jesus known, one life at a time.
     </h1>
-
-    <p className="text-white/65 text-[17px] leading-[1.85]">
-      Citadel Fellowship is a community of ordinary people pursuing an
-      extraordinary God. We exist to help people find their way back to
-      God, grow in their faith, and discover their purpose — together.
+    <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+    <p className="text-white/65 text-[17px] leading-[1.7] max-w-[600px] mx-auto text-center">
+     Helping people find God, grow in faith, and walk in purpose — together.
     </p>
+    </div>
   </div>
 </section>
 
@@ -97,65 +84,85 @@ export default function AboutPage() {
 <section className="bg-surface py-20 md:py-28 px-6 md:px-10">
   <div style={{ maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
     <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
-      Leadership
-    </p>
-    <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(28px,3.5vw,42px)] mb-4">
-      Led with heart, grounded in the Word.
-    </h2>
-    <div style={{ width: "40px", height: "3px", background: "#c8102e", borderRadius: "9999px", margin: "0 auto 20px" }} />
-    <p className="text-subtle text-[16px] leading-[1.8] mb-14" style={{ maxWidth: "560px", margin: "0 auto 56px" }}>
-      Our pastors and leadership team are committed to shepherding this
-      family with integrity, wisdom, and genuine love for every person
-      who calls Citadel home.
-    </p>
+  Our Pastors
+</p>
+
+<h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(28px,3.5vw,42px)] pb-2">
+  Meet Our Pastors.
+</h2>
+{/* <div style={{ width: "40px", height: "3px", background: "#c8102e", borderRadius: "9999px", margin: "0 auto 20px" }} /> */}
+<p className="text-subtle text-[16px] leading-[1.5] max-w-[620px] mx-auto mb-14 " style={{ maxWidth: "620px", margin: "0 auto 56px" }}>
+  With hearts for God and people, our pastors faithfully serve and lead
+  the Citadel Fellowship family in faith, love, and purpose.
+</p>
 
     {/* Pastor + wife cards */}
-    <div style={{ display: "flex", justifyContent: "center", gap: "32px", flexWrap: "wrap" }}>
-      {[
-        { name: "Pastor [Name]", role: "Lead Pastor" },
-        { name: "[Wife's Name]", role: "First Lady" },
-      ].map((p) => (
-        <div key={p.name} style={{ width: "380px" }} className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white">
-          <div className="aspect-[4/4.5] bg-surface flex items-center justify-center">
-            <div className="w-24 h-24 rounded-2xl bg-brand/10 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.5" className="w-12 h-12">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-lg bg-brand flex items-center justify-center shadow-md z-10">
-              <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                <path d="M4 19V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14l-6-4-6 4Z" />
-              </svg>
-            </div>
-            <div className="bg-ink pt-10 pb-7 px-5 text-center">
-              <p className="font-display font-semibold text-white text-[22px]">
-                {p.name}
-              </p>
-              <p className="text-white/55 text-[15px] mt-1.5">{p.role}</p>
-            </div>
-          </div>
+   {/* MOBILE — horizontal swipe (hidden from sm up) */}
+<div className="flex sm:hidden gap-5 overflow-x-auto pb-2 -mx-6 px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide">
+  {[
+    { name: "Pastor [Name]", role: "Lead Pastor" },
+    { name: "[Wife's Name]", role: "First Lady" },
+  ].map((p) => (
+    <div key={p.name} className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white flex-shrink-0 w-[75vw] snap-start">
+      <div className="aspect-[4/4.5] bg-surface flex items-center justify-center">
+        <div className="w-24 h-24 rounded-2xl bg-brand/10 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.5" className="w-12 h-12">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
         </div>
-      ))}
+      </div>
+      <div className="relative">
+        
+        <div className="bg-ink pt-10 pb-7 px-5 text-center">
+          <p className="font-display font-semibold text-white text-[22px]">{p.name}</p>
+          <p className="text-white/55 text-[15px] mt-1.5">{p.role}</p>
+        </div>
+      </div>
     </div>
+  ))}
+</div>
+
+{/* DESKTOP — centered flex (hidden below sm) */}
+<div className="hidden sm:flex" style={{ justifyContent: "center", gap: "32px", flexWrap: "wrap" }}>
+  {[
+    { name: "Pastor [Name]", role: "Lead Pastor" },
+    { name: "[Wife's Name]", role: "First Lady" },
+  ].map((p) => (
+    <div key={p.name} style={{ width: "380px" }} className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white">
+      <div className="aspect-[4/4.5] bg-surface flex items-center justify-center">
+        <div className="w-24 h-24 rounded-2xl bg-brand/10 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.5" className="w-12 h-12">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </div>
+      </div>
+      <div className="relative">
+        
+        <div className="bg-ink pt-10 pb-7 px-5 text-center">
+          <p className="font-display font-semibold text-white text-[22px]">{p.name}</p>
+          <p className="text-white/55 text-[15px] mt-1.5">{p.role}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
   </div>
 </section>
 
       {/* CTA */}
-      <section className="bg-brand py-16 md:py-20 px-6 md:px-10 flex flex-col items-center justify-center text-center">
+      <section className="bg-ink py-16 md:py-20 px-6 md:px-10 flex flex-col items-center justify-center text-center">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="font-display font-bold text-white text-[clamp(26px,3.5vw,38px)] tracking-tight mb-4">
             Come see for yourself.
           </h2>
-          <p className="text-white/75 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/75 text-[15px] leading-relaxed pb-4">
             The best way to know us is to join us. We'd love to have you this week.
           </p>
           <a
             href="/visit"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-white text-brand font-semibold text-[15px] hover:bg-brand-light transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-brand text-white hover:bg-brand-dark font-semibold text-[15px]  transition-colors"
           >
             Plan A Visit
           </a>

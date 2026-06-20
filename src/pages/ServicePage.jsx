@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import serviceImg from "../assets/services.jpg";
+import serviceImg from "../assets/service.JPG";
+import child from "../assets/child.jpg";
 
 const SERVICES = [
   {
@@ -39,7 +40,7 @@ export default function ServicesPage() {
     <div>
       {/* Page title banner */}
        <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-                <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover"  style={{ objectPosition: "center 20%" }} />
+                <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover"  style={{ objectPosition: "center 50%" }} />
                 <div className="absolute inset-0 bg-ink/80" />
                 <div className="relative z-10">
         
@@ -142,12 +143,13 @@ export default function ServicesPage() {
       {/* Children's Church note */}
       <section className="bg-white py-14 md:py-16 px-6 md:px-10">
         <div style={{ maxWidth: "700px", margin: "0 auto" }} className="flex items-center gap-5 bg-surface border border-line rounded-2xl px-6 py-5">
-          <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-              <circle cx="12" cy="7" r="4" />
-              <path d="M5.5 21a6.5 6.5 0 0 1 13 0" />
-            </svg>
-          </div>
+          <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+  <img
+    src={child}
+    alt="Children's Church"
+    className="w-full h-full object-cover"
+  />
+</div>
           <div>
             <p className="font-display font-semibold text-ink text-[16px]">Children's Church</p>
             <p className="text-subtle text-[14px] mt-0.5">Available every Sunday — kids enjoy their own program while you worship.</p>
@@ -161,7 +163,7 @@ export default function ServicesPage() {
           <h2 className="font-display font-bold text-white text-[clamp(24px,3vw,34px)] tracking-tight mb-4">
             Ready to join us?
           </h2>
-          <p className="text-white/60 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/60 text-[15px] leading-relaxed pb-5">
             Let us know you're coming and we'll make sure you feel right at home.
           </p>
           <Link
