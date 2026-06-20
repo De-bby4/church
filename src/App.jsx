@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import WelcomeSection from "./components/Welcomesection";
 import ServiceStrip from "./components/Servicestrip";
-import VisitPage from "./pages/VisitPage";
+// import VisitPage from "./pages/VisitPage";
 import SermonsPage from "./pages/SermonsPage";
 import AboutPage from "./pages/AboutPage";
 import Footer from "./components/Footer"; 
@@ -17,9 +17,10 @@ function Home() {
     <>
       <Hero />
       <WelcomeSection />
+{/* <ServiceStrip /> */}
       <WhatsappCta />
       <Footer />
-      {/* <ServiceStrip /> */}
+      
     </>
   );
 }
@@ -30,7 +31,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/visit" element={<VisitPage />} />
+        {/* <Route path="/visit" element={<VisitPage />} /> */}
         <Route path="/sermons" element={<SermonsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/giving" element={<GivingPage />} />

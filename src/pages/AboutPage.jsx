@@ -161,10 +161,10 @@ export default function AboutPage() {
             The best way to know us is to join us. We'd love to have you this week.
           </p>
           <a
-            href="/visit"
+            href="/new-here"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-brand text-white hover:bg-brand-dark font-semibold text-[15px]  transition-colors"
           >
-            Plan A Visit
+            New Here? Start Here
           </a>
         </div>
       </section>

@@ -49,9 +49,7 @@ export default function ServicesPage() {
         </h1>
          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
           <p className="text-subtle text-[16px] leading-[1.8]">
-            Whether in person or online, every gathering at Citadel Fellowship
-            is an opportunity to encounter God, grow in faith, and connect
-            with family. Here's how you can join us.
+          Join us in person or online as we worship, grow in faith, and build community together.
           </p>
         </div>
         </div>

@@ -38,7 +38,7 @@ export default function WelcomeSection() {
       <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand text-white text-[11px] font-bold tracking-[2px] uppercase mb-6">
         Welcome to Citadel
       </span>
-      <h2 className="font-display font-bold text-ink leading-[1.05] tracking-tight text-[clamp(36px,5.5vw,64px)] mb-4">
+      <h2 className="font-display font-bold text-ink leading-[1.05] tracking-tight text-[clamp(36px,5.5vw,64px)] pt-3">
         Welcome Home!
       </h2>
       <p className="text-subtle text-[16px] leading-[1.5] text-center pb-7" style={{ maxWidth: "480px", margin: "0 auto" }}>

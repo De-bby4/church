@@ -11,6 +11,11 @@ import giveImg from "../assets/services.jpg";
         <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
           Giving
         </h1>
+        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+          <p className="text-subtle text-[16px] leading-[1.5]">
+          "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." <br />— 2 Corinthians 9:7
+          </p>
+          </div>
         </div>
       </section>
 
