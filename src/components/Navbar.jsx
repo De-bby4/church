@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const LINKS = [
-  { label: "About Us",     href: "/about" },
-  { label: "Our Pastors",  href: "/#pastors" },
-  { label: "Giving",       href: "/giving" },
-  { label: "Plan A Visit", href: "/visit" },
-  { label: "Ministries",   href: "/#ministries" },
-  { label: "Sermons",      href: "/sermons" },
+  { label: "About Us",   href: "/about" },
+  { label: "New Here?",  href: "/new-here" },
+  { label: "Services",   href: "/services" },
+  { label: "Media",      href: "https://www.instagram.com/citadelfellowship?igsh=eXM0YTVlbTB1YmU4", external: true },
+  { label: "Giving",     href: "/giving" },
+  { label: "Sermons",    href: "/sermons" },
 ];
 
 export default function Navbar() {
@@ -30,27 +30,37 @@ export default function Navbar() {
         solid || menuOpen ? "bg-ink/95 backdrop-blur-md" : "bg-ink"
       }`}
     >
-    
       {/* Logo + name */}
-      {/* Logo + name */}
-<Link to="/" className="flex items-center gap-2.5 flex-shrink-0" onClick={handleLinkClick}>
-  <img src={logo} alt="Citadel Fellowship" className="w-20 h-20 object-cover rounded-full" />
-  <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight ">
-    Citadel<br className="hidden sm:block" /> Fellowship
-  </span>
-</Link>
+      <Link to="/" className="flex items-center gap-2.5 flex-shrink-0" onClick={handleLinkClick}>
+        <img src={logo} alt="Citadel Fellowship" className="w-20 h-20 object-cover rounded-full" />
+        <span className="font-display font-bold text-white text-[17px] leading-tight tracking-tight">
+          Citadel<br className="hidden sm:block" /> Fellowship
+        </span>
+      </Link>
 
       {/* Desktop links */}
       <div className="hidden lg:flex items-center gap-9">
-        {LINKS.map((l) => (
-          <Link
-            key={l.label}
-            to={l.href}
-            className="text-white/80 hover:text-white text-[14px] font-medium transition-colors"
-          >
-            {l.label}
-          </Link>
-        ))}
+        {LINKS.map((l) =>
+          l.external ? (
+            <a
+              key={l.label}
+              href={l.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/80 hover:text-white text-[14px] font-medium transition-colors"
+            >
+              {l.label}
+            </a>
+          ) : (
+            <Link
+              key={l.label}
+              to={l.href}
+              className="text-white/80 hover:text-white text-[14px] font-medium transition-colors"
+            >
+              {l.label}
+            </Link>
+          )
+        )}
       </div>
 
       {/* Mobile menu button */}
@@ -78,20 +88,31 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col px-6 py-6 gap-1">
-          {LINKS.map((l) => (
-            <Link
-              key={l.label}
-              to={l.href}
-              onClick={handleLinkClick}
-              className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 last:border-b-0 transition-colors"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {LINKS.map((l) =>
+            l.external ? (
+              <a
+                key={l.label}
+                href={l.href}
+                target="_blank"
+                rel="noreferrer"
+                onClick={handleLinkClick}
+                className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 last:border-b-0 transition-colors"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.label}
+                to={l.href}
+                onClick={handleLinkClick}
+                className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 last:border-b-0 transition-colors"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
         </div>
       </div>
     </nav>
   );
 }
-
-

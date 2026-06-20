@@ -9,6 +9,8 @@ import AboutPage from "./pages/AboutPage";
 import Footer from "./components/Footer"; 
 import GivingPage from "./pages/GivingPage";
 import WhatsappCta from "./components/Whatsappcta";
+import NewHerePage from "./pages/NewherePage";
+import ServicePage from "./pages/ServicePage";
 
 function Home() {
   return (
@@ -32,6 +34,8 @@ function App() {
         <Route path="/sermons" element={<SermonsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/giving" element={<GivingPage />} />
+        <Route path="/new-here" element={<NewHerePage />} />
+        <Route path="/services" element={<ServicePage />} />
       </Routes>
     </div>
   );

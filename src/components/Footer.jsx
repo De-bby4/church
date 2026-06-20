@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 const NAV = [
   { label: "About Us", to: "/about" },
-  { label: "Plan A Visit", to: "/visit" },
+  { label: "New Here?", to: "/new-here" },
   { label: "Sermons", to: "/sermons" },
 ];
 
@@ -87,7 +87,7 @@ export default function Footer() {
               </a>
               {/* Instagram placeholder */}
               <a
-                href="https://www.instagram.com/citadelfellowship?igsh=eXM0YTVlbTB1YmU4"
+                href="#"
                 className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/15 transition-all"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">

@@ -55,11 +55,28 @@ export default function ServiceStrip() {
               <p className="text-white/55 text-[13px] mt-0.5">College Heights Secondary School</p>
             </div>
           </div>
+
+          {/* Divider */}
+          <div className="hidden sm:block w-px h-10 bg-white/10" />
+
+          {/* Children's Church */}
+          <div className="flex items-center gap-4">
+            <div className="w-11 h-11 rounded-xl bg-brand/20 flex items-center justify-center flex-shrink-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                <circle cx="12" cy="7" r="4" />
+                <path d="M5.5 21a6.5 6.5 0 0 1 13 0" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-white font-display font-semibold text-[16px]">Children's Church</p>
+              <p className="text-white/55 text-[13px] mt-0.5">Every Sunday · Ages welcome</p>
+            </div>
+          </div>
         </div>
 
         {/* CTA */}
         <Link
-          to="/visit"
+          to="/new-here"
           className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-brand text-white font-semibold text-[14px] hover:bg-brand-dark transition-colors"
         >
           Plan A Visit

@@ -1,6 +1,6 @@
 export default function SermonsPage() {
   return (
-    <div className="">
+    <div>
       {/* <section className="bg-ink py-16 md:py-20 px-6 md:px-10">
         <div className="max-w-[1200px] mx-auto text-center">
           <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-3">
@@ -16,7 +16,7 @@ export default function SermonsPage() {
         </div>
       </section> */}
 
-      <section className="bg-surface py-24 md:py-32 px-6 md:px-10">
+      <section className="fixed inset-0 bg-surface flex items-center justify-center px-6">
         <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
           <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 24px" }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
