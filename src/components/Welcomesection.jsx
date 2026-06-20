@@ -33,7 +33,7 @@ export default function WelcomeSection() {
     <section className="bg-white py-20 md:py-28 px-6 md:px-10">
   <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
 
-    {/* Eyebrow */}
+    
     <div className="text-center mb-14 px-6">
       <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand text-white text-[11px] font-bold tracking-[2px] uppercase mb-6">
         Welcome to Citadel
@@ -47,7 +47,7 @@ export default function WelcomeSection() {
       </p>
     </div>
 
-    {/* MOBILE — horizontal swipeable row (hidden from sm and up) */}
+    {/* mobile - horizontal scroll */}
     <div className="flex sm:hidden gap-5 overflow-x-auto pb-2 -mx-6 px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide">
       {CARDS.map((c) => (
         <Link

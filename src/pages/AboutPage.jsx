@@ -33,8 +33,8 @@ export default function AboutPage() {
     <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-4">
       Who We Are
     </p>
-    <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,60px)] ">
-      Making Jesus known, one life at a time.
+    <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)] ">
+      Knowing Christ. Making Him Known.
     </h1>
     <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
     <p className="text-white/65 text-[17px] leading-[1.7] max-w-[600px] mx-auto text-center">
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
     {/* Pastor + wife cards */}
    {/* MOBILE — horizontal swipe (hidden from sm up) */}
-<div className="flex sm:hidden gap-5 overflow-x-auto pb-2 -mx-6 px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide">
+<div className="flex sm:hidden gap-5 overflow-x-auto pb-2 -mx-6  px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide">
   {[
     { name: "Pastor [Name]", role: "Lead Pastor" },
     { name: "[Wife's Name]", role: "First Lady" },

@@ -49,7 +49,7 @@ export default function ServicesPage() {
         </h1>
          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
           <p className="text-subtle text-[16px] leading-[1.8]">
-          Join us in person or online as we worship, grow in faith, and build community together.
+          Join us as we worship, grow, and encounter God together.
           </p>
         </div>
         </div>
@@ -141,7 +141,7 @@ export default function ServicesPage() {
       {/* Children's Church note */}
       <section className="bg-white py-14 md:py-16 px-6 md:px-10">
         <div style={{ maxWidth: "700px", margin: "0 auto" }} className="flex items-center gap-5 bg-surface border border-line rounded-2xl px-6 py-5">
-          <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+          <div className="w-17 h-17 rounded-xl overflow-hidden flex-shrink-0">
   <img
     src={child}
     alt="Children's Church"

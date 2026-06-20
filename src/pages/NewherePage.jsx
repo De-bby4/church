@@ -8,7 +8,7 @@ export default function NewHerePage() {
     e.preventDefault();
     const form = e.target;
     try {
-      await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      await fetch("https://formspree.io/f/xojoajek", {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" },
@@ -31,6 +31,14 @@ export default function NewHerePage() {
         <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
           Welcome Home
         </h1>
+
+<p className="text-white/75 text-[15px] italic mt-4">
+  Welcome one another as Christ has welcomed you.
+</p>
+
+<p className="text-brand-light text-[13px] mt-2">
+  Romans 15:7
+</p>
         </div>
       </section>
 

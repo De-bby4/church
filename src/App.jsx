@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import WelcomeSection from "./components/Welcomesection";
-import ServiceStrip from "./components/Servicestrip";
+import ScriptureStrip from "./components/Scripturestrip";
 // import VisitPage from "./pages/VisitPage";
 import SermonsPage from "./pages/SermonsPage";
 import AboutPage from "./pages/AboutPage";
@@ -11,13 +11,16 @@ import GivingPage from "./pages/GivingPage";
 import WhatsappCta from "./components/Whatsappcta";
 import NewHerePage from "./pages/NewherePage";
 import ServicePage from "./pages/ServicePage";
+import WhatToExpect from "./components/WhatToExpect";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Home() {
   return (
     <>
       <Hero />
       <WelcomeSection />
-{/* <ServiceStrip /> */}
+      <ScriptureStrip />
+      <WhatToExpect />
       <WhatsappCta />
       <Footer />
       
@@ -29,6 +32,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/visit" element={<VisitPage />} /> */}
