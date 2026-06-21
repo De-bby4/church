@@ -64,7 +64,7 @@ import giveImg from "../assets/services.jpg";
                   cffinance@citadelfellowship.com
                 </p>
               </div>
-              <p className="text-subtle text-[12px]  pt-3 ">Via any Canadian bank app</p>
+              <p className="text-subtle text-[12px]  pt-2.8 ">Via any Canadian bank app</p>
             </div>
 
             {/* Bank Transfer */}

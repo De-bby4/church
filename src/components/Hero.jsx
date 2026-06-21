@@ -1,30 +1,18 @@
 import { Link } from "react-router-dom";
+import heroImg from "../assets/hero.jpg";
 
 export default function Hero() {
   return (
-    <section
+    <div className="">
+      <section
       id="top"
-      className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-ink"
+      className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-ink p"
     >
-      {/* Background placeholder — replace with a real photo later */}
-      <div className="absolute inset-0">
-        <div
-          className="w-full h-full"
-          style={{
-            background:
-              "linear-gradient(160deg, #0a2622 0%, #103832 45%, #0d2c27 100%)",
-          }}
-        />
-        {/* subtle texture so the placeholder doesn't feel flat */}
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 20%, white 0%, transparent 40%), radial-gradient(circle at 80% 70%, white 0%, transparent 35%)",
-          }}
-        />
-        {/* dark gradient overlay so text stays readable, same as reference */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+     
+     {/* Background photo */}
+      <div className="absolute inset-0"  >
+        <img src={heroImg} alt="" className="w-full h-full object-cover object-[center_1%]" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(26,10,62,0.85), rgba(12,29,61,0.4), rgba(22,45,90,0.15))" }} />
       </div>
 
       {/* Content */}
@@ -64,5 +52,6 @@ export default function Hero() {
       {/* Floating pill, bottom-right — mirrors reference's "Next Steps" bubble */}
      
     </section>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 export default function ScriptureStrip() {
   return (
-    <section className="bg-ink py-16 md:py-20 px-6 md:px-10">
+    <section className="py-16 md:py-20 px-6 md:px-10" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
       <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
         <div className="w-10 h-10 rounded-lg bg-brand/20 flex items-center justify-center" style={{ margin: "0 auto 24px" }}>
           <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import aboutImg from "../assets/aboutus.jpg";
 // import visitImg from "../assets/visit.png";
 import aboutbigImg from "../assets/aboutbig.png";
+import husband from "../assets/husband.jpg";
+import wife from "../assets/wife.jpg";
 
 const VALUES = [
   {
@@ -29,7 +31,7 @@ export default function AboutPage() {
 
     <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
     <img src={aboutbigImg} alt="" className="absolute inset-0 w-full h-full object-cover"/>
-    <div className="absolute inset-0 bg-ink/80" />  
+    <div className="absolute inset-0 bg-ink/80"  />  
     <div className="relative z-10">
     <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-4">
       Who We Are
@@ -99,23 +101,17 @@ export default function AboutPage() {
 
     {/* Pastor + wife cards */}
    {/* MOBILE — horizontal swipe (hidden from sm up) */}
-<div className="flex sm:hidden gap-5 overflow-x-auto pb-2 -mx-6  px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide">
+<div className="flex sm:hidden gap-5 overflow-x-auto pb-2 -mx-6 px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide">
   {[
-    { name: "Pastor [Name]", role: "Lead Pastor" },
-    { name: "[Wife's Name]", role: "First Lady" },
+    { name: "Pastor Femmy Joe", role: "Lead Pastor", img: husband },
+    { name: "Minister Bola Ilesanmi", role: "First Lady", img: wife },
   ].map((p) => (
     <div key={p.name} className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white flex-shrink-0 w-[75vw] snap-start">
-      <div className="aspect-[4/4.5] bg-surface flex items-center justify-center">
-        <div className="w-24 h-24 rounded-2xl bg-brand/10 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.5" className="w-12 h-12">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-        </div>
+      <div className="aspect-[4/4.5] overflow-hidden">
+        <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
       </div>
       <div className="relative">
-        
-        <div className="bg-ink pt-10 pb-7 px-5 text-center">
+        <div className="bg-ink pt-5 pb-5 px-5 text-center">
           <p className="font-display font-semibold text-white text-[22px]">{p.name}</p>
           <p className="text-white/55 text-[15px] mt-1.5">{p.role}</p>
         </div>
@@ -127,21 +123,15 @@ export default function AboutPage() {
 {/* DESKTOP — centered flex (hidden below sm) */}
 <div className="hidden sm:flex" style={{ justifyContent: "center", gap: "32px", flexWrap: "wrap" }}>
   {[
-    { name: "Pastor [Name]", role: "Lead Pastor" },
-    { name: "[Wife's Name]", role: "First Lady" },
+    { name: "Pastor Femmy Joe", role: "Lead Pastor", img: husband },
+    { name: "Minister Bola Ilesanmi", role: "First Lady", img: wife },
   ].map((p) => (
     <div key={p.name} style={{ width: "380px" }} className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white">
-      <div className="aspect-[4/4.5] bg-surface flex items-center justify-center">
-        <div className="w-24 h-24 rounded-2xl bg-brand/10 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.5" className="w-12 h-12">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-        </div>
+      <div className="aspect-[4/4.5] overflow-hidden">
+        <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
       </div>
       <div className="relative">
-        
-        <div className="bg-ink pt-10 pb-7 px-5 text-center">
+        <div className="bg-ink pt-5 pb-5 px-5 text-center">
           <p className="font-display font-semibold text-white text-[22px]">{p.name}</p>
           <p className="text-white/55 text-[15px] mt-1.5">{p.role}</p>
         </div>
@@ -153,7 +143,7 @@ export default function AboutPage() {
 </section>
 
       {/* CTA */}
-      <section className="bg-ink py-16 md:py-20 px-6 md:px-10 flex flex-col items-center justify-center text-center">
+      <section className="py-16 md:py-20 px-6 md:px-10 flex flex-col items-center justify-center text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="font-display font-bold text-white text-[clamp(26px,3.5vw,38px)] tracking-tight mb-4">
             Come see for yourself.

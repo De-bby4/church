@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import serviceImg from "../assets/service.JPG";
 import child from "../assets/child.jpg";
+import Sunday from "../assets/sunday.jpg";
+import midweek from "../assets/midweek.jpg";
+import prayerville from "../assets/prayville.jpg";
 
 const SERVICES = [
   {
@@ -10,7 +13,7 @@ const SERVICES = [
     time: "4:00 PM – 6:00 PM",
     location: "College Heights Secondary School, 371 College Ave W, Guelph, ON",
     desc: "Our main weekly gathering — worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
-    flyer: null,
+    flyer: Sunday,
     color: "from-[#0c1d3d] to-[#162d5a]",
   },
   {
@@ -20,31 +23,31 @@ const SERVICES = [
     time: "7:00 PM – 8:30 PM",
     location: "Join from anywhere via YouTube Live",
     desc: "Our midweek service to recharge and refocus — teaching, prayer, and community, all from the comfort of your home.",
-    flyer: null,
+    flyer: midweek,
     color: "from-[#162d5a] to-[#1e3a6e]",
   },
   {
     title: "Prayerville",
     mode: "Monthly",
     day: "Every 2nd Saturday",
-    time: "Time TBD",
+    time: "7:00 AM - 12:00 PM",
     location: "Details shared in our WhatsApp community",
     desc: "A monthly prayer gathering where we come together to seek God's face, intercede for one another, and stand in faith as a community.",
-    flyer: null,
+    flyer: prayerville,
     color: "from-[#1e3a6e] to-[#0c1d3d]",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <div>
+    <div >
       {/* Page title banner */}
-       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
+       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden" >
                 <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover"  style={{ objectPosition: "center 50%" }} />
                 <div className="absolute inset-0 bg-ink/80" />
                 <div className="relative z-10">
         
-        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
+        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]" >
           Our Services
         </h1>
          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
@@ -55,16 +58,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Intro */}
-      {/* <section className="bg-white py-14 md:py-16 px-6 md:px-10">
-        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-          <p className="text-subtle text-[16px] leading-[1.8]">
-            Whether in person or online, every gathering at Citadel Fellowship
-            is an opportunity to encounter God, grow in faith, and connect
-            with family. Here's how you can join us.
-          </p>
-        </div>
-      </section> */}
+      
 
       {/* Service cards */}
       <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
@@ -77,7 +71,7 @@ export default function ServicesPage() {
               style={{ direction: i % 2 === 1 ? "rtl" : "ltr" }}
             >
               {/* Flyer placeholder */}
-              <div className="relative aspect-[4/3] md:aspect-auto">
+              <div className="relative aspect-[16/9] md:aspect-auto">
                 {s.flyer ? (
                   <img src={s.flyer} alt={s.title} className="w-full h-full object-cover" style={{ direction: "ltr" }} />
                 ) : (
@@ -156,7 +150,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-ink py-14 md:py-16 px-6 md:px-10">
+      <section className="bg-ink py-14 md:py-16 px-6 md:px-10" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
         <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
           <h2 className="font-display font-bold text-white text-[clamp(24px,3vw,34px)] tracking-tight mb-4">
             Ready to join us?

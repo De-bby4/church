@@ -25,17 +25,16 @@ export default function Navbar() {
 
   return (
     <nav
-      style={{ position: "sticky", top: 0 }}
-      className={`z-50 flex items-center justify-between px-6 md:px-10 h-20 transition-all duration-300 ${
-        solid || menuOpen ? "bg-ink/95 backdrop-blur-md" : "bg-ink"
+      className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 md:px-10 h-20 transition-all duration-300 ${
+        solid || menuOpen ? "bg-ink/95 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       {/* Logo + name */}
       <Link to="/" className="flex items-center gap-2.5 flex-shrink-0" onClick={handleLinkClick}>
-        <img src={logo} alt="Citadel Fellowship" className="w-8 h-12 " />
+        <img src={logo} alt="Citadel Fellowship" className="w-8 h-12" />
         <span className="font-display font-bold text-white text-[20px] leading-tight tracking-tight">
           Citadel Fellowship
-       </span>
+        </span>
       </Link>
 
       {/* Desktop links */}
@@ -90,6 +89,7 @@ export default function Navbar() {
         <div className="flex flex-col px-6 py-6 gap-1">
           {LINKS.map((l) =>
             l.external ? (
+              
               <a
                 key={l.label}
                 href={l.href}

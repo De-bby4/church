@@ -1,5 +1,5 @@
 import { useState } from "react";
-import plan from "../assets/plan.png";
+import plan from "../assets/welcome.jpg";
 
 export default function NewHerePage() {
   const [submitted, setSubmitted] = useState(false);

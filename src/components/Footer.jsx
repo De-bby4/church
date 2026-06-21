@@ -9,7 +9,7 @@ const NAV = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white">
+    <footer className="bg-ink text-white" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="px-6 md:px-10 pt-16 pb-10">
 
         {/* Top row */}
