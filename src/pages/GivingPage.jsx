@@ -2,7 +2,7 @@ import giveImg from "../assets/services.jpg";
  
  export default function GivingPage() {
   return (
-    <div>
+    <div className="pt-20 bg-ink">
       {/* Page title banner */}
       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
               <img src={giveImg} alt="" className="absolute inset-0 w-full h-full object-cover"  style={{ objectPosition: "center 20%" }} />

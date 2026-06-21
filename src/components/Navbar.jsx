@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const LINKS = [
@@ -14,6 +14,8 @@ const LINKS = [
 export default function Navbar() {
   const [solid, setSolid] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 40);
@@ -26,7 +28,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 md:px-10 h-20 transition-all duration-300 ${
-        solid || menuOpen ? "bg-ink/95 backdrop-blur-md" : "bg-transparent"
+        solid || menuOpen || !isHome ? "bg-ink/95 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       {/* Logo + name */}
@@ -89,7 +91,6 @@ export default function Navbar() {
         <div className="flex flex-col px-6 py-6 gap-1">
           {LINKS.map((l) =>
             l.external ? (
-              
               <a
                 key={l.label}
                 href={l.href}

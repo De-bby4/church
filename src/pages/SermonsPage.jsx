@@ -1,25 +1,12 @@
-import sermonImg from "../assets/sermons.jpg";
+
 
 export default function SermonsPage() {
   return (
     <div>
       {/* Page title banner */}
-      <section className="bg-ink py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden relative">
-       <img src={sermonImg} alt="" className="absolute inset-0 w-full h-full object-cover"  style={{ objectPosition: "center 20%" }} />
-          <div className="absolute inset-0 bg-ink/80" />
-          <div className="relative z-10">
-        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
-          Sermons
-        </h1>
-          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-          <p className="text-subtle text-[16px] leading-[1.8]">
-    Every message, every service — watch, re-watch, or catch up anytime.
-  </p>
-  </div>
-        </div>
-      </section>
+      
 
-      <section className=" flex items-center justify-center px-6 py-32 md:py-40">
+      <section className="bg-surface min-h-screen flex items-center justify-center px-6 py-32 md:py-40 ">
         <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
           <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 24px" }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">

@@ -27,7 +27,7 @@ const VALUES = [
 
 export default function AboutPage() {
   return (
-    <div >
+    <div className="pt-20 bg-ink">
 
     <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
     <img src={aboutbigImg} alt="" className="absolute inset-0 w-full h-full object-cover"/>
