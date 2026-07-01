@@ -1,45 +1,49 @@
 import giveImg from "../assets/services.jpg";
- 
- export default function GivingPage() {
+
+export default function GivingPage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-              <img src={giveImg} alt="" className="absolute inset-0 w-full h-full object-cover"  style={{ objectPosition: "center 20%" }} />
-                        <div className="absolute inset-0 bg-ink/80" />
-                        <div className="relative z-10">
-        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
-          Giving
-        </h1>
-        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-          <p className="text-subtle text-[16px] leading-[1.5]">
-          "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." <br />— 2 Corinthians 9:7
-          </p>
+        <img src={giveImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 20%" }} />
+        <div className="absolute inset-0 bg-ink/80" />
+        <div className="relative z-10">
+          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
+            Giving
+          </h1>
+          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+            <p className="text-white/60 text-[16px] leading-[1.5]">
+              "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+            </p>
+            <p className="text-brand-light text-[13px] mt-2">
+              — 2 Corinthians 9:7
+            </p>
           </div>
         </div>
       </section>
 
+      {/* Intro with purple gradient */}
       {/* Intro */}
-      <section className="bg-white py-16 md:py-20 px-6 md:px-10">
-        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(26px,3.5vw,40px)] mb-5">
-            Your generosity makes a difference.
-          </h2>
-          <p className="text-subtle text-[16px] leading-[1.5]">
-            Every gift helps us reach more people, serve our community, and
-            build a place where lives are transformed. Thank you for
-            partnering with us in what God is doing through Citadel Fellowship.
-          </p>
-        </div>
-      </section>
+<section className="bg-white py-16 md:py-20 px-6 md:px-10">
+  <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+    <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(26px,3.5vw,40px)] mb-5">
+      Your generosity makes a difference.
+    </h2>
+    <p className="text-subtle text-[16px] leading-[1.7]">
+      Every gift helps us reach more people, serve our community, and
+      build a place where lives are transformed. Thank you for
+      partnering with us in what God is doing through Citadel Fellowship.
+    </p>
+  </div>
+</section>
 
-      {/* Giving methods */}
+      {/* Giving methods — 3 cards */}
       <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
         <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
           <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase pb-1 text-center">
             Ways To Give
           </p>
-          <h3 className="font-display font-bold text-ink text-[clamp(24px,3vw,34px)] tracking-tight text-center pb-7">
+          <h3 className="font-display font-bold text-ink text-[clamp(24px,3vw,34px)] tracking-tight text-center pb-10">
             Choose the method that works best for you.
           </h3>
 
@@ -59,12 +63,12 @@ import giveImg from "../assets/services.jpg";
               <p className="text-subtle text-[14px] leading-[1.7] pb-5">
                 Send an e-transfer through your bank app to:
               </p>
-              <div className="bg-surface rounded-xl px-4 py-3.5 ">
-                <p className="font-display font-semibold text-ink text-[15px] break-all ">
+              <div className="bg-surface rounded-xl px-4 py-3.5">
+                <p className="font-display font-semibold text-ink text-[14px] break-all">
                   cffinance@citadelfellowship.com
                 </p>
               </div>
-              <p className="text-subtle text-[12px]  pt-2.8 ">Via any Canadian bank app</p>
+              <p className="text-subtle text-[12px] pt-3">Via any Canadian bank app</p>
             </div>
 
             {/* Bank Transfer */}

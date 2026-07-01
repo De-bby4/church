@@ -3,15 +3,15 @@ import serviceImg from "../assets/service.JPG";
 import child from "../assets/child.jpg";
 import Sunday from "../assets/sunday.jpg";
 import midweek from "../assets/midweek.jpg";
-import prayerville from "../assets/prayville.jpg";
+import prayerville from "../assets/prayerville.jpeg";
 
 const SERVICES = [
   {
     title: "Sunday Service",
     mode: "In Person",
     day: "Every Sunday",
-    time: "4:00 PM – 6:00 PM",
-    location: "College Heights Secondary School, 371 College Ave W, Guelph, ON",
+    time: "4:00 PM",
+    location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
     desc: "Our main weekly gathering — worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
     flyer: Sunday,
     color: "from-[#0c1d3d] to-[#162d5a]",
@@ -20,45 +20,43 @@ const SERVICES = [
     title: "Wednesday Service",
     mode: "Online",
     day: "Every Wednesday",
-    time: "7:00 PM – 8:30 PM",
-    location: "Join from anywhere via YouTube Live",
-    desc: "Our midweek service to recharge and refocus — teaching, prayer, and community, all from the comfort of your home.",
+    time: "7:00 PM",
+    location: "Microsoft Teams",
+    desc: "Join our midweek service to recharge and refocus from the comfort of your home — Bible Study & Prayer.",
     flyer: midweek,
     color: "from-[#162d5a] to-[#1e3a6e]",
   },
   {
-    title: "Prayerville",
+    title: "PRAYERVILLE",
     mode: "Monthly",
     day: "Every 2nd Saturday",
     time: "7:00 AM - 12:00 PM",
-    location: "Details shared in our WhatsApp community",
-    desc: "A monthly prayer gathering where we come together to seek God's face, intercede for one another, and stand in faith as a community.",
+    location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3" ,
+    desc: "PRAYERVILLE is a non-denominational Prayer Convergence and a consecrated gathering designed to bring hearts into alignment with God's eternal purposes, foster deepening intimacy through a lifestyle of consistent prayer, and transform ordinary men into divine instruments through whom God expresses His Glory across the land.",
     flyer: prayerville,
     color: "from-[#1e3a6e] to-[#0c1d3d]",
   },
 ];
 
+
 export default function ServicesPage() {
   return (
-    <div className="pt-20 bg-ink">
+    <div>
       {/* Page title banner */}
-       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden" >
-                <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover"  style={{ objectPosition: "center 50%" }} />
-                <div className="absolute inset-0 bg-ink/80" />
-                <div className="relative z-10">
-        
-        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]" >
-          Our Services
-        </h1>
-         <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-          <p className="text-subtle text-[16px] leading-[1.8]">
-          Join us as we worship, grow, and encounter God together.
-          </p>
-        </div>
+      <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
+        <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
+        <div className="absolute inset-0 bg-ink/80" />
+        <div className="relative z-10">
+          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
+            Our Services
+          </h1>
+          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+            <p className="text-white/60 text-[16px] leading-[1.8]">
+              Join us as we worship, grow, and encounter God together.
+            </p>
+          </div>
         </div>
       </section>
-
-      
 
       {/* Service cards */}
       <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
@@ -70,7 +68,7 @@ export default function ServicesPage() {
               className="bg-white rounded-2xl border border-line shadow-soft overflow-hidden grid md:grid-cols-[1fr_1.2fr]"
               style={{ direction: i % 2 === 1 ? "rtl" : "ltr" }}
             >
-              {/* Flyer placeholder */}
+              {/* Flyer */}
               <div className="relative aspect-[16/9] md:aspect-auto">
                 {s.flyer ? (
                   <img src={s.flyer} alt={s.title} className="w-full h-full object-cover" style={{ direction: "ltr" }} />
@@ -99,7 +97,7 @@ export default function ServicesPage() {
                   </span>
                 </div>
 
-                <p className="text-subtle text-[15px] leading-[1.8] mb-6">
+                <p className="text-subtle text-[15px] leading-[1.4] pb-2 pt-2">
                   {s.desc}
                 </p>
 
@@ -126,6 +124,28 @@ export default function ServicesPage() {
                     <p className="text-subtle text-[14px]">{s.location}</p>
                   </div>
                 </div>
+
+                {/* Join link — Wednesday only */}
+                {s.title === "Wednesday Service" && (
+                  <>
+                    <div className="flex items-center gap-2 pt-3 pb-3">
+                      <a
+                        href="https://bit.ly/4lQtFbJ"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand text-white font-semibold text-[13px] hover:bg-brand-dark transition-colors"
+                      >
+                        Join Service
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                          <path d="M5 12h14M13 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
+                    <p className="text-subtle text-[12px] mt-2">
+                      Or join via Microsoft Teams — ID: 2266576394298 | PW: 2ji2tf35
+                    </p>
+                  </>
+                )}
               </div>
             </div>
           ))}
@@ -136,12 +156,12 @@ export default function ServicesPage() {
       <section className="bg-white py-14 md:py-16 px-6 md:px-10">
         <div style={{ maxWidth: "700px", margin: "0 auto" }} className="flex items-center gap-5 bg-surface border border-line rounded-2xl px-6 py-5">
           <div className="w-17 h-17 rounded-xl overflow-hidden flex-shrink-0">
-  <img
-    src={child}
-    alt="Children's Church"
-    className="w-full h-full object-cover"
-  />
-</div>
+            <img
+              src={child}
+              alt="Children's Church"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div>
             <p className="font-display font-semibold text-ink text-[16px]">Children's Church</p>
             <p className="text-subtle text-[14px] mt-0.5">Available every Sunday — kids enjoy their own program while you worship.</p>
@@ -150,7 +170,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-ink py-14 md:py-16 px-6 md:px-10" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+      <section className="bg-ink py-14 md:py-16 px-6 md:px-10">
         <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
           <h2 className="font-display font-bold text-white text-[clamp(24px,3vw,34px)] tracking-tight mb-4">
             Ready to join us?

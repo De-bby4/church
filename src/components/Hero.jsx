@@ -18,14 +18,10 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 px-6 md:px-10 pb-16 md:pb-20 pt-32 max-w-[1200px] mx-auto w-full animate-fadeUp">
         <h1 className="font-display font-bold text-white leading-[1.05] tracking-tight text-[clamp(40px,7vw,70px)] max-w-[820px]">
-          Making Jesus Known
+          THE DWELLING PLACE
         </h1>
          <p className="text-white/70 text-[13px] md:text-[16px] leading-[1.75] max-w-[750px] pt-5  ">
-          At Citadel Fellowship,
-          we grow in our relationship with Him and with each other, helping
-          every person discover their purpose in God's kingdom. We'd be
-          honored to walk with you as you get connected and become part of
-          our church family.
+         The name Citadel is deeply significant as it reflects the divine function and mandate entrusted to the ministry, to stand as a spiritual fortress and stronghold in the land. The name embodies the purpose for which God has established this ministry.
         </p>
 
         <div className="flex flex-wrap items-center gap-3.5 pt-5">

@@ -8,12 +8,12 @@ export default function ScriptureStrip() {
             <path d="M16 3h2a2 2 0 0 1 2 2v14l-6-4" />
           </svg>
         </div>
-        <p className="font-display text-white text-[20px] md:text-[26px] leading-[1.5] font-medium italic mb-6">
-          "For I know the plans I have for you, declares the Lord, plans to
-          prosper you and not to harm you, plans to give you hope and a future."
+        <p className="font-display text-white text-[20px] md:text-[26px] leading-[1.5] font-medium italic pb-4">
+          "In him the whole building is joined together and rises to become a holy temple in the Lord.
+          And in him you too are being built together to become a dwelling in which God lives by his Spirit."
         </p>
         <p className="text-white/50 text-[14px] font-semibold tracking-wide">
-          — Jeremiah 29:11 (NIV)
+          — Ephesians 2:21-22 (NIV)
         </p>
       </div>
     </section>

@@ -6,8 +6,7 @@ const LINKS = [
   { label: "About Us",   href: "/about" },
   { label: "New Here?",  href: "/new-here" },
   { label: "Services",   href: "/services" },
-  { label: "Media",      href: "https://www.instagram.com/citadelfellowship?igsh=eXM0YTVlbTB1YmU4", external: true },
-  { label: "Giving",     href: "/giving" },
+  { label: "Media",      href: "https://www.instagram.com/citadelfellowship?igsh=eXM0YTVlbTB1YmU4" },
   { label: "Sermons",    href: "/sermons" },
 ];
 
@@ -39,7 +38,7 @@ export default function Navbar() {
         </span>
       </Link>
 
-      {/* Desktop links */}
+      {/* Desktop links + Give button */}
       <div className="hidden lg:flex items-center gap-9">
         {LINKS.map((l) =>
           l.external ? (
@@ -62,6 +61,12 @@ export default function Navbar() {
             </Link>
           )
         )}
+        <Link
+          to="/giving"
+          className="px-5 py-2 rounded-lg bg-brand text-white text-[14px] font-semibold hover:bg-brand-dark transition-colors"
+        >
+          Give
+        </Link>
       </div>
 
       {/* Mobile menu button */}
@@ -85,7 +90,7 @@ export default function Navbar() {
       {/* Mobile dropdown panel */}
       <div
         className={`lg:hidden fixed top-20 inset-x-0 bg-ink/98 backdrop-blur-md border-t border-white/10 overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[480px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="flex flex-col px-6 py-6 gap-1">
@@ -97,7 +102,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={handleLinkClick}
-                className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 last:border-b-0 transition-colors"
+                className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 transition-colors"
               >
                 {l.label}
               </a>
@@ -106,12 +111,19 @@ export default function Navbar() {
                 key={l.label}
                 to={l.href}
                 onClick={handleLinkClick}
-                className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 last:border-b-0 transition-colors"
+                className="text-white/85 hover:text-white text-[16px] font-medium py-3 border-b border-white/8 transition-colors"
               >
                 {l.label}
               </Link>
             )
           )}
+          <Link
+            to="/giving"
+            onClick={handleLinkClick}
+            className="mt-3 py-3 rounded-lg bg-brand text-white text-[16px] font-semibold text-center hover:bg-brand-dark transition-colors"
+          >
+            Give
+          </Link>
         </div>
       </div>
     </nav>

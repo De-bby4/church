@@ -54,11 +54,11 @@ export default function Footer() {
             <div className="flex flex-col gap-3.5">
               <div>
                 <p className="text-white text-[14px] font-medium">Sunday</p>
-                <p className="text-white/50 text-[13px]">In Person · 4:00 – 6:00 PM</p>
+                <p className="text-white/50 text-[13px]">In Person · 4:00 PM</p>
               </div>
               <div>
                 <p className="text-white text-[14px] font-medium">Wednesday</p>
-                <p className="text-white/50 text-[13px]">Online · 7:00 – 8:30 PM</p>
+                <p className="text-white/50 text-[13px]">Online · 7:00 PM</p>
               </div>
             </div>
           </div>
@@ -87,7 +87,9 @@ export default function Footer() {
               </a>
               {/* Instagram placeholder */}
               <a
-                href="#"
+                href="https://www.instagram.com/citadelfellowship"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/15 transition-all"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -98,7 +100,9 @@ export default function Footer() {
               </a>
               {/* Facebook placeholder */}
               <a
-                href="#"
+                href="https://www.facebook.com/citadelfellowship"
+                target="_blank"
+                rel="noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/15 transition-all"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

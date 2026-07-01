@@ -11,16 +11,20 @@ export default function WhatToExpect() {
       answer: "Whatever you're comfortable in — there's no dress code. Some come in jeans, some dress up. Just come as you are.",
     },
     {
-      question: "How long is service?",
-      answer: "About two hours on Sunday (4–6 PM) and ninety minutes on Wednesday (7–8:30 PM). Enough time to worship, hear the Word, and connect.",
-    },
-    {
       question: "What about my kids?",
       answer: "We've got them covered! Children's Church runs every Sunday with safe, fun, age-appropriate programming while you worship.",
     },
     {
       question: "I'm new — will I feel welcome?",
       answer: "Absolutely. We're a warm, friendly community and we love meeting new people. No one will put you on the spot — just come and be yourself.",
+    },
+    {
+      question: "Where are we located?",
+      answer: "We meet at College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3. Sunday service is in person, 4:00 PM.",
+    },
+    {
+      question: "Can I join online?",
+      answer: "Yes! Our Wednesday midweek service runs online every week, 7:00 PM via Microsoft Teams. Join from anywhere — all you need is a device and an internet connection.",
     },
   ];
 

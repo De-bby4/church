@@ -13,6 +13,7 @@ import NewHerePage from "./pages/NewherePage";
 import ServicePage from "./pages/ServicePage";
 import WhatToExpect from "./components/WhatToExpect";
 import ScrollToTop from "./components/ScrollToTop";
+// import GalleryPage from "./pages/GalleryPage";
 
   function Home() {
     return (
@@ -41,6 +42,7 @@ import ScrollToTop from "./components/ScrollToTop";
           <Route path="/new-here" element={<NewHerePage />} />
           <Route path="/services" element={<ServicePage />} />
           <Route path="/quick-links" element={<WelcomeSection />} />
+          {/* <Route path="/gallery" element={<GalleryPage />} /> */}
         </Routes>
       </div>
   );
