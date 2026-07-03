@@ -109,6 +109,21 @@ export default function Footer() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" />
                 </svg>
               </a>
+              <a
+                href="https://www.tiktok.com/@citadelfellowship"
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/15 transition-all"
+              >
+                <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-4 h-4"
+  >
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25h-3.13v12.3a2.9 2.9 0 1 1-2-2.75V8.82a6.03 6.03 0 1 0 5.99 6.02V9.58a8.1 8.1 0 0 0 4.73 1.53V8a4.8 4.8 0 0 1-1.82-1.31z" />
+  </svg>
+              </a>
             </div>
           </div>
         </div>

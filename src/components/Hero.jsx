@@ -21,7 +21,9 @@ export default function Hero() {
           THE DWELLING PLACE
         </h1>
          <p className="text-white/70 text-[13px] md:text-[16px] leading-[1.75] max-w-[750px] pt-5  ">
-         The name Citadel is deeply significant as it reflects the divine function and mandate entrusted to the ministry, to stand as a spiritual fortress and stronghold in the land. The name embodies the purpose for which God has established this ministry.
+         Welcome to Citadel Fellowship. The name Citadel is deeply significant as it reflects the divine function and mandate entrusted to the ministry, to stand as a spiritual fortress and stronghold in the land. The name embodies the purpose for which God has established this ministry. 
+<br />We are glad you are here. May you find purpose as you journey with us in Jesus Name.
+
         </p>
 
         <div className="flex flex-wrap items-center gap-3.5 pt-5">

@@ -25,7 +25,7 @@ export default function NewHerePage() {
       {/* Page title banner */}
       
         <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-          <img src={plan} alt="" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: "center 30%"}} />
+          <img src={plan} alt="" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: "center 56%"}} />
           <div className="absolute inset-0 bg-ink/80" />
           <div className="relative z-10">
         <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">

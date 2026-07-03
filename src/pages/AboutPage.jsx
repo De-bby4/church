@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import aboutImg from "../assets/aboutus.jpg";
 import aboutbigImg from "../assets/aboutbig.png";
 import husband from "../assets/husband.jpg";
-import wife from "../assets/wife.jpg";
 import slide1 from "../assets/slide1.JPG";
 import slide2 from "../assets/slide2.JPG";
 import slide3 from "../assets/slide3.jpg";
@@ -13,49 +12,113 @@ const SLIDES = [aboutImg, slide1, slide2, slide3, slide4];
 
 function CardSlideshow() {
   const [center, setCenter] = useState(0);
+  const [dragX, setDragX] = useState(0); // live drag offset, px
+  const [isDragging, setIsDragging] = useState(false);
 
+  const dragStartX = useRef(0);
+  const containerWidth = useRef(500);
+  const containerRef = useRef(null);
+
+  // Pause autoplay while the user is actively swiping
   useEffect(() => {
+    if (isDragging) return;
     const timer = setInterval(() => {
       setCenter((prev) => (prev + 1) % SLIDES.length);
     }, 3500);
     return () => clearInterval(timer);
-  }, []);
+  }, [isDragging]);
 
   const getIndex = (offset) => (center + offset + SLIDES.length) % SLIDES.length;
 
-  const positions = [
-    {
-      idx: getIndex(-1),
-      style: {
-        transform: "translateX(-55%) translateY(-16px) scale(0.78) rotate(-4deg)",
-        zIndex: 1,
-        opacity: 0.7,
-        filter: "brightness(0.8)",
+  // Convert the live drag distance into a -1..1 progress value
+  const dragProgress = () => {
+    const w = containerWidth.current || 500;
+    return Math.max(-1, Math.min(1, dragX / (w * 0.45)));
+  };
+
+  const buildPositions = () => {
+    const progress = dragProgress();
+
+    // Base transform recipe for a slot, shifted by drag progress so cards
+    // visibly slide with the finger/cursor instead of snapping at release.
+    const slot = (baseX, baseScale, baseRotate, baseOpacity, baseBrightness, shiftWeight) => {
+      const x = baseX + progress * shiftWeight;
+      const scale = baseScale + Math.abs(progress) * 0.03;
+      return {
+        transform: `translateX(${x}%) translateY(-16px) scale(${baseScale === 1 ? 1 - Math.abs(progress) * 0.05 : scale}) rotate(${baseRotate}deg)`,
+        opacity: baseOpacity,
+        filter: `brightness(${baseBrightness})`,
+      };
+    };
+
+    return [
+      {
+        idx: getIndex(-1),
+        style: {
+          zIndex: 1,
+          ...slot(-55, 0.78, -4, 0.7, 0.8, 40),
+        },
       },
-    },
-    {
-      idx: getIndex(0),
-      style: {
-        transform: "translateX(0) translateY(0) scale(1) rotate(0deg)",
-        zIndex: 3,
-        opacity: 1,
-        filter: "brightness(1)",
+      {
+        idx: getIndex(0),
+        style: {
+          zIndex: 3,
+          ...slot(0, 1, 0, 1, 1, 40),
+        },
       },
-    },
-    {
-      idx: getIndex(1),
-      style: {
-        transform: "translateX(55%) translateY(-16px) scale(0.78) rotate(4deg)",
-        zIndex: 1,
-        opacity: 0.7,
-        filter: "brightness(0.8)",
+      {
+        idx: getIndex(1),
+        style: {
+          zIndex: 1,
+          ...slot(55, 0.78, 4, 0.7, 0.8, 40),
+        },
       },
-    },
-  ];
+    ];
+  };
+
+  const positions = buildPositions();
+
+  const handleDragStart = (clientX) => {
+    if (containerRef.current) {
+      containerWidth.current = containerRef.current.offsetWidth;
+    }
+    dragStartX.current = clientX;
+    setIsDragging(true);
+  };
+
+  const handleDragMove = (clientX) => {
+    if (!isDragging) return;
+    setDragX(clientX - dragStartX.current);
+  };
+
+  const handleDragEnd = () => {
+    if (!isDragging) return;
+    const threshold = containerWidth.current * 0.15;
+
+    if (dragX <= -threshold) {
+      setCenter((prev) => (prev + 1) % SLIDES.length);
+    } else if (dragX >= threshold) {
+      setCenter((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
+    }
+
+    setIsDragging(false);
+    setDragX(0);
+  };
 
   return (
     <div className="w-full" style={{ maxWidth: "500px", margin: "0 auto" }}>
-      <div className="relative flex items-center justify-center" style={{ height: "clamp(280px, 50vw, 420px)" }}>
+      <div
+        ref={containerRef}
+        className="relative flex items-center justify-center select-none"
+        style={{ height: "clamp(280px, 50vw, 420px)", touchAction: "pan-y" }}
+        onPointerDown={(e) => {
+          e.currentTarget.setPointerCapture(e.pointerId);
+          handleDragStart(e.clientX);
+        }}
+        onPointerMove={(e) => handleDragMove(e.clientX)}
+        onPointerUp={handleDragEnd}
+        onPointerLeave={() => isDragging && handleDragEnd()}
+      >
         {positions.map((pos, i) => (
           <div
             key={i}
@@ -63,17 +126,20 @@ function CardSlideshow() {
             style={{
               width: "clamp(180px, 40vw, 280px)",
               height: "clamp(240px, 48vw, 370px)",
-              transition: "all 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
-              cursor: "pointer",
+              transition: isDragging
+                ? "none"
+                : "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease, filter 0.6s ease",
+              cursor: isDragging ? "grabbing" : "grab",
               ...pos.style,
             }}
-            onClick={() => setCenter(pos.idx)}
+            onClick={() => !isDragging && setCenter(pos.idx)}
           >
             <img
               src={SLIDES[pos.idx]}
               alt={`Citadel Fellowship ${pos.idx + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover pointer-events-none"
               style={{ objectPosition: "center 20%" }}
+              draggable={false}
             />
           </div>
         ))}
@@ -100,7 +166,7 @@ export default function AboutPage() {
     <div className="pt-20 bg-ink">
 
       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-        <img src={aboutbigImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={aboutbigImg} alt="" className="absolute inset-0 w-full h-full object-cover scale-170" />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">
           <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-4">
@@ -182,58 +248,61 @@ export default function AboutPage() {
   </div>
 </section>
 
-      {/* Leadership — Pastor & Wife */}
+      {/* Leadership — Pastor Femmy Joe */}
       <section className="bg-surface py-20 md:py-28 px-6 md:px-10">
-        <div style={{ maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
-          <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
-            Our Pastors
-          </p>
-          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(28px,3.5vw,42px)] pb-2">
-            Meet Our Pastors.
-          </h2>
-          <p className="text-subtle text-[16px] leading-[1.5] max-w-[620px] mx-auto mb-14" style={{ maxWidth: "620px", margin: "0 auto 56px" }}>
-            With hearts for God and people, our pastors faithfully serve and lead
-            the Citadel Fellowship family in faith, love, and purpose.
-          </p>
-
-          {/* MOBILE — horizontal swipe */}
-          <div className="flex sm:hidden gap-5 overflow-x-auto pb-2 -mx-6 px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide">
-            {[
-              { name: "Pastor Femmy Joe", role: "Lead Pastor", img: husband },
-              { name: "Minister Bola Ilesanmi", role: "First Lady", img: wife },
-            ].map((p) => (
-              <div key={p.name} className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white flex-shrink-0 w-[75vw] snap-start">
-                <div className="aspect-[4/4.5] overflow-hidden">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
-                </div>
-                <div className="relative">
-                  <div className="bg-ink pt-5 pb-5 px-5 text-center">
-                    <p className="font-display font-semibold text-white text-[22px]">{p.name}</p>
-                    <p className="text-white/55 text-[15px] mt-1.5">{p.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          {/* Photo */}
+          <div className="order-2 lg:order-1 relative">
+            <div className="hidden lg:block absolute -top-4 -left-4 w-full h-full rounded-2xl bg-brand/15" />
+            <div className="relative rounded-2xl overflow-hidden border border-line shadow-soft bg-white max-h-[520px]">
+              <img src={husband} alt="Pastor Femmy Joe" className="w-full h-full object-cover" style={{ maxHeight: "520px" }} />
+            </div>
           </div>
 
-          {/* DESKTOP — centered flex */}
-          <div className="hidden sm:flex" style={{ justifyContent: "center", gap: "32px", flexWrap: "wrap" }}>
-            {[
-              { name: "Pastor Femmy Joe", role: "Lead Pastor", img: husband },
-              { name: "Minister Bola Ilesanmi", role: "First Lady", img: wife },
-            ].map((p) => (
-              <div key={p.name} style={{ width: "380px" }} className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white">
-                <div className="aspect-[4/4.5] overflow-hidden">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
-                </div>
-                <div className="relative">
-                  <div className="bg-ink pt-5 pb-5 px-5 text-center">
-                    <p className="font-display font-semibold text-white text-[22px]">{p.name}</p>
-                    <p className="text-white/55 text-[15px] mt-1.5">{p.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Write-up */}
+          <div className="order-1 lg:order-2">
+            <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
+              Meet The Leadership
+            </p>
+            <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(26px,3.2vw,36px)] pb-5">
+              Pastor Femmy Joe
+            </h2>
+
+            <p className="text-ink/70 italic text-[14.5px] leading-[1.6] border-l-[3px] border-brand pl-5 mb-6">
+              "And I will give you shepherds according to My heart, who will
+              feed you with knowledge and understanding."
+              <span className="block text-brand text-[12px] font-semibold mt-2 not-italic">
+                — Jeremiah 3:15 NKJV
+              </span>
+            </p>
+
+            <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.7]">
+              <p>
+                Pastor Femmy Joe is a minister of the Gospel with a passion
+                for awakening genuine love for God and inspiring believers to
+                live active, expressive, and Christ-centered lives.
+              </p>
+              <p>
+                He has served in pastoral and media leadership roles across
+                several ministries, including The Redeemed Christian Church
+                of God, as Music Pastor at River of Life International
+                Fellowship, and as Head of the Media Unit for Remnant
+                Christian Network North America. He is a graduate of RCN
+                Theological Seminary – Adullam (2021).
+              </p>
+              <p>
+                He received the call to pulpit ministry in 2016, and after a
+                prolonged season of prayer, the Lord instructed him to raise
+                intercessors for the city of Guelph and Wellington County,
+                leading to the birth of The Watchmen Prayer Group in January
+                2022, a daily prayer movement that continues today.
+              </p>
+              <p>
+                In 2024, the Lord gave clarity for the establishment of
+                Citadel Fellowship, which officially began on August 30,
+                2025.
+              </p>
+            </div>
           </div>
         </div>
       </section>
