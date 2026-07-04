@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { href, Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const LINKS = [
   { label: "About Us",   href: "/about" },
   { label: "New Here?",  href: "/new-here" },
   {label: "Serve", href: "/serve"},
-  { label: "Services",   href: "/services" },
+  { label: "Events",   href: "/services" },
   { label: "Gallery",      href: "/gallery" },
   { label: "Sermons",    href: "/sermons" },
+  {label: "Contact Us", href:"/contact"},
 ];
 
 export default function Navbar() {

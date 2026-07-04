@@ -8,15 +8,15 @@ export default function WhatToExpect() {
   const ITEMS = [
     {
       question: "What should I wear?",
-      answer: "Whatever you're comfortable in — there's no dress code. Some come in jeans, some dress up. Just come as you are.",
+      answer: "Whatever you're comfortable in, there's no dress code. Some come in jeans, some dress up. Just come as you are.",
     },
     {
       question: "What about my kids?",
       answer: "We've got them covered! Children's Church runs every Sunday with safe, fun, age-appropriate programming while you worship.",
     },
     {
-      question: "I'm new — will I feel welcome?",
-      answer: "Absolutely. We're a warm, friendly community and we love meeting new people. No one will put you on the spot — just come and be yourself.",
+      question: "I'm new, will I feel welcome?",
+      answer: "Absolutely. We're a warm, friendly community and we love meeting new people. No one will put you on the spot, just come and be yourself.",
     },
     {
       question: "Where are we located?",
@@ -24,7 +24,7 @@ export default function WhatToExpect() {
     },
     {
       question: "Can I join online?",
-      answer: "Yes! Our Wednesday midweek service runs online every week, 7:00 PM via Microsoft Teams. Join from anywhere — all you need is a device and an internet connection.",
+      answer: "Yes! Our Wednesday midweek service runs online every week, 7:00 PM via Microsoft Teams. Join from anywhere, all you need is a device and an internet connection.",
     },
   ];
 

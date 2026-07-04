@@ -12,7 +12,7 @@ const SERVICES = [
     day: "Every Sunday",
     time: "4:00 PM",
     location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
-    desc: "Our main weekly gathering — worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
+    desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
     flyer: Sunday,
     color: "from-[#0c1d3d] to-[#162d5a]",
   },
@@ -22,7 +22,7 @@ const SERVICES = [
     day: "Every Wednesday",
     time: "7:00 PM",
     location: "Microsoft Teams",
-    desc: "Join our midweek service to recharge and refocus from the comfort of your home — Bible Study & Prayer.",
+    desc: "Join our midweek service to recharge and refocus from the comfort of your home, Bible Study & Prayer.",
     flyer: midweek,
     color: "from-[#162d5a] to-[#1e3a6e]",
   },
@@ -169,7 +169,7 @@ export default function ServicesPage() {
           </div>
           <div>
             <p className="font-display font-semibold text-ink text-[16px]">Children's Church</p>
-            <p className="text-subtle text-[14px] mt-0.5">Available every Sunday — kids enjoy their own program while you worship.</p>
+            <p className="text-subtle text-[14px] mt-0.5">Available every Sunday, kids enjoy their own program while you worship.</p>
           </div>
         </Link>
       </section>

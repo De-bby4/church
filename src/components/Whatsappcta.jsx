@@ -7,7 +7,7 @@ export default function WhatsAppCta() {
           Join our WhatsApp community
         </h3>
         <p className="text-subtle text-[15px] leading-[1.7] pb-8">
-          Stay connected with the Citadel family — get updates on services,
+          Stay connected with the Citadel family, get updates on services,
           events, prayer requests, and encouragements throughout the week.
         </p>
 

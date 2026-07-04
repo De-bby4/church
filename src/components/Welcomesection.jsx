@@ -17,6 +17,8 @@ const CARDS = [
     cta: "Sign Up",
     to: "/new-here",
     image: visitImg,
+    zoom: 1.6,
+    position: "top",
   },
   {
     tag: "Catch Up Anytime",
@@ -59,7 +61,8 @@ export default function WelcomeSection() {
             <img
               src={c.image}
               alt={c.title}
-              className="absolute inset-0 w-full h-full object-cover"
+              className={`absolute inset-0 w-full h-full object-cover scale-[var(--zoom)] ${c.position === "top" ? "object-top" : c.position === "bottom" ? "object-bottom" : "object-center"}`}
+              style={{ "--zoom": c.zoom || 1, transformOrigin: c.position === "top" ? "top" : c.position === "bottom" ? "bottom" : "center" }}
             />
           ) : (
             <div className={`absolute inset-0 bg-gradient-to-br ${c.color}`} />
@@ -95,7 +98,8 @@ export default function WelcomeSection() {
             <img
               src={c.image}
               alt={c.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className={`absolute inset-0 w-full h-full object-cover scale-[var(--zoom)] transition-transform duration-500 group-hover:scale-[calc(var(--zoom)*1.05)] ${c.position === "top" ? "object-top" : c.position === "bottom" ? "object-bottom" : "object-center"}`}
+              style={{ "--zoom": c.zoom || 1, transformOrigin: c.position === "top" ? "top" : c.position === "bottom" ? "bottom" : "center" }}
             />
           ) : (
             <div className={`absolute inset-0 bg-gradient-to-br ${c.color} transition-transform duration-500 group-hover:scale-105`} />

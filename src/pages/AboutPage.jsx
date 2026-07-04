@@ -234,7 +234,7 @@ export default function AboutPage() {
     </h1>
 
     <p className="mt-4 max-w-[700px] text-white/65 text-[17px] leading-[1.5]">
-      Helping people find God, grow in faith, and walk in purpose — together.
+      Helping people find God, grow in faith, and walk in purpose together.
     </p>
   </div>
 </section>

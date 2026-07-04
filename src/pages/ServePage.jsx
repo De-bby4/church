@@ -1,4 +1,5 @@
 import { useState } from "react";
+import serve from "../assets/serve.jpeg"
 
 const DEPARTMENTS = [
   "Media & Sound",
@@ -45,15 +46,18 @@ export default function ServePage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
-      <section className="py-16 md:py-20 px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
-        
-        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
-          Serve With Us
-        </h1>
-        <p className="text-white/50 text-[16px] leading-[1.7] mt-4" style={{ maxWidth: "550px", margin: "16px auto 0" }}>
-          Every gift matters. Discover where you can plug in and use what God
-          has given you to build His Kingdom.
-        </p>
+      <section className="relative overflow-hidden py-24 md:py-36 px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+        <img src={serve} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 40%" }} />
+        <div className="absolute inset-0 bg-ink/80" />
+        <div className="relative z-10">
+          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
+            Serve With Us
+          </h1>
+          <p className="text-white/50 text-[16px] leading-[1.7] mt-4" style={{ maxWidth: "550px", margin: "16px auto 0" }}>
+            Every gift matters. Discover where you can plug in and use what God
+            has given you to build His Kingdom.
+          </p>
+        </div>
       </section>
 
       <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
@@ -67,15 +71,24 @@ export default function ServePage() {
             <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(26px,3.2vw,36px)] pb-1">
               You were made for a purpose.
             </h2>
-            <p className="text-subtle text-[15.5px] leading-[1.5] pb-8">
+        
+            <p className="text-subtle text-[15.5px] leading-[1.5] pb-3">
               Every member of Citadel Fellowship has a place to belong and a
-              part to play. Serving isn't just about filling a role — it's
+              part to play. Serving isn't just about filling a role, it's
               about growing in your gifting while helping others encounter
               God. Whether you're behind the scenes or up front, there's a
               team waiting for you.
             </p>
+            <p className="text-ink/70 italic text-[14.5px] leading-[1.6] border-l-[3px] border-brand pl-5 mb-6">
+              "For we are His workmanship, created in Christ Jesus for good
+              works, which God prepared beforehand that we should walk in
+              them."
+              <span className="block text-brand text-[12px] font-semibold mt-2 not-italic">
+                — Ephesians 2:10 NKJV
+              </span>
+            </p>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 pt-5">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">

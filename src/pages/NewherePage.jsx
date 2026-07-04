@@ -47,7 +47,7 @@ export default function NewHerePage() {
 
           {/* Left: welcome text */}
          <div className="lg:sticky lg:top-24">
-  <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(28px,3.5vw,40px)] pb-4">
+  <h2 className="font-display font-bold text-ink leading-[1.1] tracking-tight text-[clamp(28px,3.5vw,40px)] pb-3">
     We're glad you're here.
   </h2>    <p className="text-subtle text-[16px] leading-[1.5] mb-8">
               God has a purpose for your life, and we're honored to be part of
@@ -71,7 +71,7 @@ export default function NewHerePage() {
                 </div>
                 <div>
                   <p className="font-display font-semibold text-ink text-[15px]">Warm & welcoming</p>
-                  <p className="text-subtle text-[14px] mt-0.5">Come as you are — no dress code, no pressure.</p>
+                  <p className="text-subtle text-[14px] mt-0.5">Come as you are, no dress code, no pressure.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

@@ -148,7 +148,7 @@ export default function GalleryPage() {
         </h1>
         <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
             <p className="text-white/60 text-[16px] leading-[1.8]">
-              A glimpse into life at Citadel Fellowship — worship, community, and everything in between.
+              A glimpse into life at Citadel Fellowship worship, community, and everything in between.
             </p>
           </div>
         </div>
@@ -233,7 +233,7 @@ export default function GalleryPage() {
             Little Hearts, Growing In Faith.
           </h2>
           <p className="text-subtle text-[15px] leading-[1.6] text-center pb-10" style={{ maxWidth: "560px", margin: "0 auto 40px" }}>
-            A peek into our kids' classes — worship, Bible stories, crafts,
+            A peek into our kids' classes worship, Bible stories, crafts,
             and games every Sunday. Shared with parental permission.
           </p>
 

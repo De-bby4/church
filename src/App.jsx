@@ -15,6 +15,7 @@ import WhatToExpect from "./components/WhatToExpect";
 import ScrollToTop from "./components/ScrollToTop";
 import GalleryPage from "./pages/GalleryPage";
 import ServePage from "./pages/ServePage";
+import ContactPage from "./pages/ContactPage";
 
   function Home() {
     return (
@@ -45,6 +46,7 @@ import ServePage from "./pages/ServePage";
           <Route path="/quick-links" element={<WelcomeSection />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/serve" element={<ServePage />} />
+          <Route path="/contact" element={<ContactPage/>}/>
         </Routes>
       </div>
   );
