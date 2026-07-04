@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import aboutImg from "../assets/about.jpg";
-import visitImg from "../assets/new.jpg";
+import visitImg from "../assets/new.jpeg";
 import sermonImg from "../assets/sermon.jpg";
 
 const CARDS = [

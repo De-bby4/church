@@ -263,13 +263,18 @@ export default function AboutPage() {
                 is rooted in the revelation that God Himself is our Citadel.
               </p>
               <p className="text-ink/70 italic text-[14.5px] border-l-[3px] border-brand pl-5">
-                "Because the Lord is our Fortress and Stronghold, we are called
-                to reflect His nature by becoming a people through whom His
-                strength, protection, truth, and Kingdom are made manifest in
-                our generation."
+                "The Lord is my rock and my fortress and my deliverer, my God,
+                my rock, in whom I take refuge, my shield, and the horn of my
+                salvation, my stronghold."
                 <span className="block text-brand text-[12px] font-semibold mt-2 not-italic">
                   — Psalm 18:2 (ESV)
                 </span>
+              </p>
+              <p>
+                Because the Lord is our Fortress and Stronghold, we are called
+                to reflect His nature by becoming a people through whom His
+                strength, protection, truth, and Kingdom are made manifest in
+                our generation.
               </p>
             </div>
           </div>
@@ -279,89 +284,80 @@ export default function AboutPage() {
         </div>
       </section>
 
-     {/* Mandate & Vision */}
-<section className="py-20 md:py-28 px-6 md:px-10" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
-  <div style={{ maxWidth: "750px", margin: "0 auto", textAlign: "center" }}>
+    {/* Leadership — Pastor Femmy Joe */}
+<section className="bg-surface py-20 md:py-28 px-6 md:px-10">
+  <div
+    style={{ maxWidth: "1100px", margin: "0 auto" }}
+    className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center"
+  >
+    {/* Photo */}
+    <div className="order-2 lg:order-1 flex">
+      <div className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white w-full">
+        <div className="max-h-[480px]">
+          <img
+            src={husband}
+            alt="Pastor Femmy Joe"
+            className="w-full h-full object-cover"
+            style={{ maxHeight: "480px" }}
+          />
+        </div>
+        <div className="bg-ink py-5 px-5 text-center">
+          <p className="font-display font-semibold text-white text-[20px]">
+            Pastor Femmy Joe
+          </p>
+          <p className="text-white/55 text-[14px] mt-1">
+            Lead Pastor
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <p className="text-brand-light text-[11px] font-bold tracking-[3px] uppercase mb-4">
-      Our Mandate
-    </p>
-    <p className="font-display font-bold text-white text-[20px] md:text-[26px] leading-[1.5]">
-      To position God's Kingdom agenda in the heart of every man and
-      enable them to be established in it.
-    </p>
+    {/* Write-up */}
+    <div className="order-1 lg:order-2 self-center">
+      <p className="text-brand text-[35px] font-bold tracking-[3px] uppercase pb-2">
+        Meet The Leadership
+      </p>
 
-    <div className="w-12 h-[2px] bg-brand rounded-full" style={{ margin: "40px auto" }} />
+      <p className="text-ink/70 italic text-[14.5px] leading-[1.6] border-l-[3px] border-brand pl-5 pb-2">
+        "And I will give you shepherds according to My heart, who will
+        feed you with knowledge and understanding."
+        <span className="block text-brand text-[12px] font-semibold mt-2 not-italic">
+          — Jeremiah 3:15 NKJV
+        </span>
+      </p>
 
-    <p className="text-brand-light text-[11px] font-bold tracking-[3px] uppercase mb-4">
-      Our Vision
-    </p>
-    <p className="font-display font-bold text-white text-[20px] md:text-[26px] leading-[1.5]">
-      To cultivate a place where the Spirit of God flourishes, shaping
-      and transforming lives until Christ is fully formed in all of us.
-    </p>
+      <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.5] pt-4">
+        <p>
+          Pastor Femmy Joe is a minister of the Gospel with a passion for
+          awakening genuine love for God and inspiring believers to live
+          active, expressive, and Christ-centered lives.
+        </p>
 
+        <p>
+          He has served in pastoral and media leadership roles across
+          several ministries, including The Redeemed Christian Church of
+          God, as Music Pastor at River of Life International Fellowship,
+          and as Head of the Media Unit for Remnant Christian Network North
+          America. He is a graduate of RCN Theological Seminary – Adullam
+          (2021).
+        </p>
+
+        <p>
+          He received the call to pulpit ministry in 2016, and after a
+          prolonged season of prayer, the Lord instructed him to raise
+          intercessors for the city of Guelph and Wellington County,
+          leading to the birth of The Watchmen Prayer Group in January
+          2022, a daily prayer movement that continues today.
+        </p>
+
+        <p>
+          In 2024, the Lord gave clarity for the establishment of
+          Citadel Fellowship, which officially began on August 30, 2025.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
-
-      {/* Leadership — Pastor Femmy Joe */}
-      <section className="bg-surface py-20 md:py-28 px-6 md:px-10">
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-          {/* Photo */}
-          <div className="order-2 lg:order-1 relative">
-            <div className="hidden lg:block absolute -top-4 -left-4 w-full h-full rounded-2xl bg-brand/15" />
-            <div className="relative rounded-2xl overflow-hidden border border-line shadow-soft bg-white max-h-[520px]">
-              <img src={husband} alt="Pastor Femmy Joe" className="w-full h-full object-cover" style={{ maxHeight: "520px" }} />
-            </div>
-          </div>
-
-          {/* Write-up */}
-          <div className="order-1 lg:order-2">
-            <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
-              Meet The Leadership
-            </p>
-            <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(26px,3.2vw,36px)] pb-5">
-              Pastor Femmy Joe
-            </h2>
-
-            <p className="text-ink/70 italic text-[14.5px] leading-[1.6] border-l-[3px] border-brand pl-5 mb-6">
-              "And I will give you shepherds according to My heart, who will
-              feed you with knowledge and understanding."
-              <span className="block text-brand text-[12px] font-semibold mt-2 not-italic">
-                — Jeremiah 3:15 NKJV
-              </span>
-            </p>
-
-            <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.5]">
-              <p>
-                Pastor Femmy Joe is a minister of the Gospel with a passion
-                for awakening genuine love for God and inspiring believers to
-                live active, expressive, and Christ-centered lives.
-              </p>
-              <p>
-                He has served in pastoral and media leadership roles across
-                several ministries, including The Redeemed Christian Church
-                of God, as Music Pastor at River of Life International
-                Fellowship, and as Head of the Media Unit for Remnant
-                Christian Network North America. He is a graduate of RCN
-                Theological Seminary – Adullam (2021).
-              </p>
-              <p>
-                He received the call to pulpit ministry in 2016, and after a
-                prolonged season of prayer, the Lord instructed him to raise
-                intercessors for the city of Guelph and Wellington County,
-                leading to the birth of The Watchmen Prayer Group in January
-                2022, a daily prayer movement that continues today.
-              </p>
-              <p>
-                In 2024, the Lord gave clarity for the establishment of
-                Citadel Fellowship, which officially began on August 30,
-                2025.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16 md:py-20 px-6 md:px-10 flex flex-col items-center justify-center text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>

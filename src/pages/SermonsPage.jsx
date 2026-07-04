@@ -131,22 +131,33 @@ export default function SermonsPage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page banner */}
-      <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
+     <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
         <img src={sermon} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 25%" }} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">
-        <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-4">
+        <p className="text-brand-light text-[24px] font-bold tracking-[3px] uppercase pb-3">
           Sermons
         </p>
-        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(30px,4.5vw,46px)]">
+        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[25px] pb-3">
           Words That Build Faith.
         </h1>
-        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-            <p className="text-white/60 text-[16px] leading-[1.8]">
+        <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+            <p className="text-white/60 text-[16px] leading-[1.4] pb-3">
               Catch quick moments from recent messages below, or watch full
           sermons on our YouTube channel.
             </p>
           </div>
+          <a
+            href="https://youtube.com/@citadelfellowship?si=czkvIDlUt3l9rw8T"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-brand text-white font-semibold text-[15px] hover:bg-brand-dark transition-colors"
+          >
+            <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5L15.8 12Z" />
+            </svg>
+            Watch on YouTube
+          </a>
         </div>
       </section>
 
