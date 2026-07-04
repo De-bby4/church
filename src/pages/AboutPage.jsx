@@ -220,23 +220,24 @@ export default function AboutPage() {
   return (
     <div className="pt-20 bg-ink">
 
-      <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-        <HeroFadeSlideshow images={HERO_IMAGES} />
-        <div className="absolute inset-0 bg-ink/80" />
-        <div className="relative z-10">
-          <p className="text-brand-light text-[22px] font-bold tracking-[3px] uppercase mb-4">
-            Who We Are
-          </p>
-          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,19px)]">
-            Knowing Christ. Making Him Known.
-          </h1>
-          <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
-            <p className="text-white/65 text-[17px] leading-[1.5] max-w-[600px] mx-auto text-center">
-              Helping people find God, grow in faith, and walk in purpose — together.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section className="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden">
+  <HeroFadeSlideshow images={HERO_IMAGES} />
+  <div className="absolute inset-0 bg-ink/80" />
+
+  <div className="relative z-10 flex flex-col items-center text-center">
+    <p className="text-brand-light text-[24px] font-bold tracking-[3px] uppercase mb-4">
+      Who We Are
+    </p>
+
+    <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[30px]">
+      Knowing Christ. Making Him Known.
+    </h1>
+
+    <p className="mt-4 max-w-[700px] text-white/65 text-[17px] leading-[1.5]">
+      Helping people find God, grow in faith, and walk in purpose — together.
+    </p>
+  </div>
+</section>
 
       {/* Story */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-10">
