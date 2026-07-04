@@ -227,7 +227,7 @@ export default function AboutPage() {
           <p className="text-brand-light text-[20px] font-bold tracking-[3px] uppercase mb-4">
             Who We Are
           </p>
-          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
+          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,42px)]">
             Knowing Christ. Making Him Known.
           </h1>
           <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
