@@ -1,19 +1,105 @@
 import { useState } from "react";
-import p1 from "../assets/husband.jpg";
+import gallery from "../assets/gallery.jpg";
+import p1 from "../assets/p1.jpg";
+import p2 from "../assets/p2.jpg";
+import p3 from "../assets/p3.jpg";
+import p4 from "../assets/p4.jpg";
+import p5 from "../assets/p5.jpg";
+import p6 from "../assets/p6.jpg";
+import p7 from "../assets/p7.jpg";
+import p8 from "../assets/p8.jpg";
+import p9 from "../assets/p9.jpg";
+import p10 from "../assets/p10.jpg";
+import p11 from "../assets/p11.jpg";
+import p12 from "../assets/p12.jpg";
+import p13 from "../assets/p13.jpg";
+import p14 from "../assets/p14.jpg";
+import p15 from "../assets/p15.jpg";
+import p16 from "../assets/p16.jpg";
+import p17 from "../assets/p17.jpg";
+import p18 from "../assets/p18.jpg";
+import p19 from "../assets/p19.jpg";
+import p20 from "../assets/p20.jpg";
+import p21 from "../assets/p21.jpg";
+import p22 from "../assets/p22.jpg";
+import p23 from "../assets/p23.jpg";
+import p24 from "../assets/p24.jpg";
 
+// Drop your real photos in here, one per line, in whatever order you like.
+// `position` is optional — controls which part of the photo shows if it
+// gets cropped by its tile's height. Leave it out for the normal center
+// crop. Only add it on photos where the crop is cutting off a head or
+// leaving empty space above/below. Options: "top", "center", "bottom".
 const PHOTOS = [
-  { src: p1, alt: "Sunday worship" },
-  { src: p1, alt: "Fellowship dinner" },
-  { src: p1, alt: "Sunday worship" },
-  { src: p1, alt: "Fellowship dinner" },
-  { src: p1, alt: "Sunday worship" },
-  { src: p1, alt: "Fellowship dinner" },
-  { src: p1, alt: "Sunday worship" },
-  { src: p1, alt: "Fellowship dinner" },
-  { src: p1, alt: "Sunday worship" },
+  { src: p1, alt: "Citadel Fellowship 1" },
+  { src: p2, alt: "Citadel Fellowship 2" },
+  { src: p3, alt: "Citadel Fellowship 3" },
+  { src: p4, alt: "Citadel Fellowship 4" },
+  { src: p5, alt: "Citadel Fellowship 5"},
+  { src: p6, alt: "Citadel Fellowship 6", position: "top" },
+  { src: p7, alt: "Citadel Fellowship 7" },
+  { src: p9, alt: "Citadel Fellowship 8", position: "top" },
+  { src: p8, alt: "Citadel Fellowship 9" },
+  { src: p10, alt: "Citadel Fellowship 10" },
+  { src: p11, alt: "Citadel Fellowship 11" },
+  { src: p12, alt: "Citadel Fellowship 12" },
+  { src: p13, alt: "Citadel Fellowship 13" },
+  { src: p14, alt: "Citadel Fellowship 14" },
+  { src: p15, alt: "Citadel Fellowship 15" },
+  { src: p16, alt: "Citadel Fellowship 16" },
+  { src: p17, alt: "Citadel Fellowship 17" },
+  { src: p18, alt: "Citadel Fellowship 18", position: "top" },
+  { src: p19, alt: "Citadel Fellowship 19" },
+  { src: p20, alt: "Citadel Fellowship 20" },
+  { src: p21, alt: "Citadel Fellowship 21" },
+  { src: p22, alt: "Citadel Fellowship 22", position: "top" },
+  { src: p23, alt: "Citadel Fellowship 23" },
+  { src: p24, alt: "Citadel Fellowship 24" },
 ];
-// Placeholder grid when no photos are added yet
-const PLACEHOLDER_COUNT = 9;
+
+
+const HEIGHTS = ["h-[260px] md:h-[480px]", "h-[160px] md:h-[290px]"];
+
+// Maps each photo's optional `position` field to the matching Tailwind class.
+const OBJECT_POSITION = {
+  top: "object-top",
+  center: "object-center",
+  bottom: "object-bottom",
+};
+
+
+function splitIntoColumns(photos, numCols) {
+  const cols = Array.from({ length: numCols }, () => []);
+  photos.forEach((photo, index) => {
+    cols[index % numCols].push({ photo, index });
+  });
+  return cols;
+}
+
+function GalleryColumn({ items, columnOffset, onOpen }) {
+  return (
+    <div className="flex-1 flex flex-col gap-4 md:gap-5">
+      {items.map((item, posInCol) => {
+        
+        const height = HEIGHTS[(posInCol + columnOffset) % HEIGHTS.length];
+        return (
+          <div
+            key={item.index}
+            className={`relative rounded-xl overflow-hidden cursor-pointer group border border-line shadow-soft ${height}`}
+            onClick={() => onOpen(item.index)}
+          >
+            <img
+              src={item.photo.src}
+              alt={item.photo.alt || `Citadel Fellowship ${item.index + 1}`}
+              className={`w-full h-full object-cover ${OBJECT_POSITION[item.photo.position] || "object-center"} transition-transform duration-500 group-hover:scale-105`}
+            />
+            <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-300" />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function GalleryPage() {
   const [selected, setSelected] = useState(null);
@@ -21,114 +107,85 @@ export default function GalleryPage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
-      <section className="py-16 md:py-20 px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
-        <p className="text-white/50 text-[12px] font-medium mb-3">
-          Home <span className="mx-1.5">/</span> <span className="text-white/80">Gallery</span>
-        </p>
+      <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+        <img src={gallery} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
+               <div className="absolute inset-0 bg-ink/80" />
+               <div className="relative z-10">
         <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
           Our Moments
         </h1>
-        <p className="text-white/50 text-[16px] leading-[1.5] mt-4" style={{ maxWidth: "500px", margin: "16px auto 0" }}>
-          A glimpse into life at Citadel Fellowship — worship, community, and everything in between.
-        </p>
+        <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+            <p className="text-white/60 text-[16px] leading-[1.8]">
+              A glimpse into life at Citadel Fellowship — worship, community, and everything in between.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Gallery grid */}
       <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          {/* Mobile: 2 columns */}
+          <div className="flex md:hidden gap-4">
+            {splitIntoColumns(PHOTOS, 2).map((items, c) => (
+              <GalleryColumn key={c} items={items} columnOffset={c} onOpen={setSelected} />
+            ))}
+          </div>
 
-          {PHOTOS.length > 0 ? (
-            <>
-              <div className="columns-2 md:columns-3 gap-4 space-y-4">
-                {PHOTOS.map((photo, i) => (
-                  <div
-                    key={i}
-                    className="break-inside-avoid rounded-xl overflow-hidden cursor-pointer group"
-                    onClick={() => setSelected(i)}
-                  >
-                    <img
-                      src={photo.src}
-                      alt={photo.alt || `Citadel Fellowship ${i + 1}`}
-                      className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                ))}
-              </div>
+          {/* Desktop: 3 columns */}
+          <div className="hidden md:flex gap-5">
+            {splitIntoColumns(PHOTOS, 3).map((items, c) => (
+              <GalleryColumn key={c} items={items} columnOffset={c} onOpen={setSelected} />
+            ))}
+          </div>
 
-              {/* Lightbox */}
-              {selected !== null && (
-                <div
-                  className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-6"
-                  onClick={() => setSelected(null)}
-                >
-                  <button
-                    className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                    onClick={() => setSelected(null)}
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="w-5 h-5">
-                      <path d="M18 6 6 18M6 6l12 12" />
-                    </svg>
-                  </button>
-                  <div className="flex items-center gap-4 w-full max-w-4xl">
-                    <button
-                      className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelected((selected - 1 + PHOTOS.length) % PHOTOS.length);
-                      }}
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                        <path d="M15 18l-6-6 6-6" />
-                      </svg>
-                    </button>
-                    <img
-                      src={PHOTOS[selected].src}
-                      alt={PHOTOS[selected].alt}
-                      className="max-h-[80vh] max-w-full rounded-xl object-contain"
-                      style={{ margin: "0 auto" }}
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    <button
-                      className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelected((selected + 1) % PHOTOS.length);
-                      }}
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                        <path d="M9 18l6-6-6-6" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              )}
-            </>
-          ) : (
-            /* Placeholder state */
-            <div>
-              <div className="columns-2 md:columns-3 gap-4 space-y-4">
-                {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => {
-                  const heights = ["h-[220px]", "h-[300px]", "h-[260px]", "h-[340px]", "h-[240px]", "h-[280px]", "h-[320px]", "h-[250px]", "h-[290px]"];
-                  return (
-                    <div
-                      key={i}
-                      className={`break-inside-avoid rounded-xl ${heights[i % heights.length]} bg-white border border-line flex items-center justify-center`}
-                    >
-                      <div className="text-center">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#e3e8f0" strokeWidth="1.5" className="w-10 h-10" style={{ margin: "0 auto 8px" }}>
-                          <rect x="3" y="3" width="18" height="18" rx="3" />
-                          <circle cx="8.5" cy="8.5" r="1.5" fill="#e3e8f0" stroke="none" />
-                          <path d="M21 15l-5-5L5 21" />
-                        </svg>
-                        <p className="text-line text-[12px]">Photo {i + 1}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="text-center mt-14">
-                <p className="text-subtle text-[16px]">Photos coming soon — stay tuned!</p>
-              </div>
+          {/* Lightbox */}
+          {selected !== null && (
+            <div
+              className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 md:p-6"
+              onClick={() => setSelected(null)}
+            >
+              <button
+                className="absolute top-4 right-4 md:top-6 md:right-6 z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                onClick={() => setSelected(null)}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="w-5 h-5">
+                  <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Arrows float over the image instead of sitting beside it —
+                  keeps them on-screen no matter how narrow the viewport is. */}
+              <button
+                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelected((selected - 1 + PHOTOS.length) % PHOTOS.length);
+                }}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+
+              <img
+                src={PHOTOS[selected].src}
+                alt={PHOTOS[selected].alt}
+                className="max-h-[80vh] max-w-[72vw] md:max-w-[80vw] rounded-xl object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+
+              <button
+                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelected((selected + 1) % PHOTOS.length);
+                }}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
             </div>
           )}
         </div>
@@ -140,7 +197,7 @@ export default function GalleryPage() {
           <h3 className="font-display font-bold text-white text-[22px] md:text-[26px] tracking-tight mb-3">
             See more on Instagram
           </h3>
-          <p className="text-white/50 text-[15px] leading-[1.7] mb-8">
+          <p className="text-white/50 text-[15px] leading-[1.7] pb-4">
             Follow us for weekly updates, behind-the-scenes moments, and encouragements.
           </p>
           <a

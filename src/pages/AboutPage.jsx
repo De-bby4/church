@@ -1,14 +1,69 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import aboutImg from "../assets/aboutus.jpg";
-import aboutbigImg from "../assets/aboutbig.png";
+import a0 from "../assets/try.jpeg";
 import husband from "../assets/husband.jpg";
 import slide1 from "../assets/slide1.JPG";
 import slide2 from "../assets/slide2.JPG";
 import slide3 from "../assets/slide3.jpg";
 import slide4 from "../assets/slide4.jpg";
+import a1 from "../assets/about1.jpg";
+import a2 from "../assets/about2.jpg";
+import a3 from "../assets/about3.jpg";
+import a4 from "../assets/about4.jpg";
 
 const SLIDES = [aboutImg, slide1, slide2, slide3, slide4];
+
+const HERO_IMAGES = [
+  { src: a0, position: "center 50%" },
+  { src: a1, position: "center 50%" },
+  { src: a2, position: "center 50%" },
+  { src: a3, position: "center 50%" },
+  { src: a4, position: " 30%" },
+];
+
+function getObjectPositionClass(position) {
+  if (!position) return "object-center";
+  if (position === "top") return "object-top";
+  if (position === "bottom") return "object-bottom";
+  if (position === "center") return "object-center";
+  // Full CSS-style value like "center 50%" or "bottom 40%" — just needs
+  // spaces turned into underscores for Tailwind's arbitrary value syntax.
+  if (position.includes(" ")) return `object-[${position.replace(/\s+/g, "_")}]`;
+  // A lone value like "30%" — treat it as a vertical focus point.
+  return `object-[center_${position}]`;
+}
+
+// Crossfades through a set of background images — each one fades in while
+// the previous fades out, instead of a hard cut or a slide/swipe motion.
+function HeroFadeSlideshow({ images, intervalMs = 3500, fadeMs = 1500 }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, intervalMs);
+    return () => clearInterval(timer);
+  }, [images.length, intervalMs]);
+
+  return (
+    <div className="absolute inset-0">
+      {images.map((img, i) => (
+        <img
+          key={i}
+          src={img.src}
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover ${getObjectPositionClass(img.position)}`}
+          style={{
+            opacity: i === index ? 1 : 0,
+            transform: `scale(${img.zoom || 1})`,
+            transition: `opacity ${fadeMs}ms ease-in-out`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 function CardSlideshow() {
   const [center, setCenter] = useState(0);
@@ -166,10 +221,10 @@ export default function AboutPage() {
     <div className="pt-20 bg-ink">
 
       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-        <img src={aboutbigImg} alt="" className="absolute inset-0 w-full h-full object-cover scale-170" />
+        <HeroFadeSlideshow images={HERO_IMAGES} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">
-          <p className="text-brand-light text-[12px] font-bold tracking-[3px] uppercase mb-4">
+          <p className="text-brand-light text-[20px] font-bold tracking-[3px] uppercase mb-4">
             Who We Are
           </p>
           <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
@@ -276,7 +331,7 @@ export default function AboutPage() {
               </span>
             </p>
 
-            <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.7]">
+            <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.5]">
               <p>
                 Pastor Femmy Joe is a minister of the Gospel with a passion
                 for awakening genuine love for God and inspiring believers to

@@ -1,11 +1,14 @@
-import giveImg from "../assets/services.jpg";
+import giveImg from "../assets/give.jpeg";
+import RBC from "../assets/rbc.png"
+import paypal from "../assets/paypal.png"
+import int from "../assets/int.jpeg"
 
 export default function GivingPage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-        <img src={giveImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 20%" }} />
+        <img src={giveImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 60%" }} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">
           <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
@@ -51,16 +54,13 @@ export default function GivingPage() {
 
             {/* E-Transfer */}
             <div className="bg-white rounded-2xl border border-line p-7 shadow-soft text-center">
-              <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-                  <rect x="2" y="5" width="20" height="14" rx="2" />
-                  <path d="M2 10h20" />
-                </svg>
+              <div className="w-15 h-14 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
+                <img src={int}/>
               </div>
               <h4 className="font-display font-semibold text-ink text-[18px] mb-2">
                 Interac E-Transfer
               </h4>
-              <p className="text-subtle text-[14px] leading-[1.7] pb-5">
+              <p className="text-subtle text-[14px] leading-[1.7] pb-3">
                 Send an e-transfer through your bank app to:
               </p>
               <div className="bg-surface rounded-xl px-4 py-3.5">
@@ -73,10 +73,8 @@ export default function GivingPage() {
 
             {/* Bank Transfer */}
             <div className="bg-white rounded-2xl border border-line p-7 shadow-soft text-center">
-              <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-                  <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
-                </svg>
+              <div className="w-15 h-14 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
+                <img src={RBC}/>
               </div>
               <h4 className="font-display font-semibold text-ink text-[18px] mb-2">
                 Bank Transfer (RBC)
@@ -106,10 +104,8 @@ export default function GivingPage() {
 
             {/* PayPal */}
             <div className="bg-white rounded-2xl border border-line p-7 shadow-soft text-center">
-              <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6" />
-                </svg>
+              <div className="w-15 h-15  flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
+                <img src={paypal}/>
               </div>
               <h4 className="font-display font-semibold text-ink text-[18px] mb-2">
                 PayPal

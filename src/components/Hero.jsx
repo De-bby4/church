@@ -20,17 +20,17 @@ export default function Hero() {
         <h1 className="font-display font-bold text-white leading-[1.05] tracking-tight text-[clamp(40px,7vw,70px)] max-w-[820px]">
           THE DWELLING PLACE
         </h1>
-         <p className="text-white/70 text-[13px] md:text-[16px] leading-[1.75] max-w-[750px] pt-5  ">
+         <p className="text-white/70 text-[13px] md:text-[16px] leading-[1.75] max-w-[750px] pt-1  ">
          Welcome to Citadel Fellowship. The name Citadel is deeply significant as it reflects the divine function and mandate entrusted to the ministry, to stand as a spiritual fortress and stronghold in the land. The name embodies the purpose for which God has established this ministry. 
 <br />We are glad you are here. May you find purpose as you journey with us in Jesus Name.
 
         </p>
 
-        <div className="flex flex-wrap items-center gap-3.5 pt-5">
+        <div className="flex flex-wrap items-center gap-3.5 pt-7">
           <a
-           href="https://youtube.com/@citadelfellowship?si=czkvIDlUt3l9rw8T"
+           href="https://www.youtube.com/@citadelfellowship/live"
   target="_blank"
-  rel="noreferrer"
+  rel="noopener noreferrer"
   className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-white text-ink font-semibold text-[15px] hover:bg-brand-light transition-colors"
 >
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

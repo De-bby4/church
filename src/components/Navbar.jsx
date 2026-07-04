@@ -6,7 +6,7 @@ const LINKS = [
   { label: "About Us",   href: "/about" },
   { label: "New Here?",  href: "/new-here" },
   { label: "Services",   href: "/services" },
-  { label: "Media",      href: "https://www.instagram.com/citadelfellowship?igsh=eXM0YTVlbTB1YmU4" },
+  { label: "Gallery",      href: "/gallery" },
   { label: "Sermons",    href: "/sermons" },
 ];
 
