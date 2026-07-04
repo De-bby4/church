@@ -14,6 +14,7 @@ import ServicePage from "./pages/ServicePage";
 import WhatToExpect from "./components/WhatToExpect";
 import ScrollToTop from "./components/ScrollToTop";
 import GalleryPage from "./pages/GalleryPage";
+import ServePage from "./pages/ServePage";
 
   function Home() {
     return (
@@ -43,6 +44,7 @@ import GalleryPage from "./pages/GalleryPage";
           <Route path="/services" element={<ServicePage />} />
           <Route path="/quick-links" element={<WelcomeSection />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/serve" element={<ServePage />} />
         </Routes>
       </div>
   );

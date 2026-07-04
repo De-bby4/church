@@ -153,9 +153,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Children's Church note */}
+      {/* Children's Church note — links to the Kids Ministry section on Gallery */}
       <section className="bg-white py-14 md:py-16 px-6 md:px-10">
-        <div style={{ maxWidth: "700px", margin: "0 auto" }} className="flex items-center gap-5 bg-surface border border-line rounded-2xl px-6 py-5">
+        <Link
+          to="/gallery#kids-ministry"
+          style={{ maxWidth: "700px", margin: "0 auto" }}
+          className="flex items-center gap-5 bg-surface border border-line rounded-2xl px-6 py-5 hover:border-brand/40 hover:shadow-soft transition-all cursor-pointer"
+        >
           <div className="w-17 h-17 rounded-xl overflow-hidden flex-shrink-0">
             <img
               src={child}
@@ -167,7 +171,7 @@ export default function ServicesPage() {
             <p className="font-display font-semibold text-ink text-[16px]">Children's Church</p>
             <p className="text-subtle text-[14px] mt-0.5">Available every Sunday — kids enjoy their own program while you worship.</p>
           </div>
-        </div>
+        </Link>
       </section>
 
       {/* CTA */}

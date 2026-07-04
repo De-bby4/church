@@ -1,0 +1,202 @@
+import { useState } from "react";
+
+const DEPARTMENTS = [
+  "Media & Sound",
+  "Ushering",
+  "Choir / Worship",
+  "Prayer Team",
+  "Children's Church",
+  "Hospitality",
+  "Outreach & Evangelism",
+  "Administration",
+];
+
+export default function ServePage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [selected, setSelected] = useState([]);
+
+  const toggleDept = (dept) => {
+    setSelected((prev) =>
+      prev.includes(dept) ? prev.filter((d) => d !== dept) : [...prev, dept]
+    );
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    formData.append("departments", selected.join(", "));
+    formData.append("formType", "Serve Sign-Up");
+
+    try {
+      await fetch("https://formspree.io/f/xojoajek", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      setSubmitted(true);
+      form.reset();
+      setSelected([]);
+    } catch (err) {
+      alert("Something went wrong — please try again.");
+    }
+  };
+
+  return (
+    <div className="pt-20 bg-ink">
+      {/* Page title banner */}
+      <section className="py-16 md:py-20 px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+        
+        <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
+          Serve With Us
+        </h1>
+        <p className="text-white/50 text-[16px] leading-[1.7] mt-4" style={{ maxWidth: "550px", margin: "16px auto 0" }}>
+          Every gift matters. Discover where you can plug in and use what God
+          has given you to build His Kingdom.
+        </p>
+      </section>
+
+      <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+          {/* Left: why serve */}
+          <div className="lg:sticky lg:top-24">
+            <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
+              Why Serve?
+            </p>
+            <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(26px,3.2vw,36px)] pb-1">
+              You were made for a purpose.
+            </h2>
+            <p className="text-subtle text-[15.5px] leading-[1.5] pb-8">
+              Every member of Citadel Fellowship has a place to belong and a
+              part to play. Serving isn't just about filling a role — it's
+              about growing in your gifting while helping others encounter
+              God. Whether you're behind the scenes or up front, there's a
+              team waiting for you.
+            </p>
+
+            <div className="flex flex-col gap-5">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-display font-semibold text-ink text-[15px]">No experience needed</p>
+                  <p className="text-subtle text-[14px] mt-0.5">We'll train and support you every step of the way.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-display font-semibold text-ink text-[15px]">Serve alongside family</p>
+                  <p className="text-subtle text-[14px] mt-0.5">Build real relationships while you serve together.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-display font-semibold text-ink text-[15px]">Grow in your gifting</p>
+                  <p className="text-subtle text-[14px] mt-0.5">Discover and develop what God has placed in you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: form */}
+          <div className="bg-white border border-line rounded-2xl p-7 md:p-9 shadow-soft">
+            <h3 className="font-display font-bold text-ink text-[22px] mb-2 text-center">
+              Get Involved
+            </h3>
+            <p className="text-subtle text-[14px] pb-8 text-center">
+              Fill this out and our team will reach out to help you get started.
+            </p>
+
+            {submitted ? (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <p className="font-display font-semibold text-ink text-[20px] mb-2">
+                  Thank you for stepping up!
+                </p>
+                <p className="text-subtle text-[15px]">
+                  We'll be in touch soon to help you get connected.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-5">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-ink text-[13px] font-semibold pb-1.5 block">First Name</label>
+                      <input type="text" name="firstName" required placeholder="John" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                    </div>
+                    <div>
+                      <label className="text-ink text-[13px] font-semibold pb-1.5 block">Last Name</label>
+                      <input type="text" name="lastName" required placeholder="Smith" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">Email Address</label>
+                    <input type="email" name="email" required placeholder="you@email.com" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                  </div>
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">Phone Number</label>
+                    <input type="tel" name="phone" required placeholder="+1 234 567 890" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                  </div>
+
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">
+                      Which department(s) interest you?
+                    </label>
+                    <div className="grid grid-cols-2 gap-2.5">
+                      {DEPARTMENTS.map((dept) => (
+                        <button
+                          type="button"
+                          key={dept}
+                          onClick={() => toggleDept(dept)}
+                          className="text-left px-3.5 py-2.5 rounded-lg border text-[13px] font-medium transition-all"
+                          style={{
+                            borderColor: selected.includes(dept) ? "#c8102e" : "#e3e8f0",
+                            background: selected.includes(dept) ? "rgba(200,16,46,0.08)" : "#f5f7fb",
+                            color: selected.includes(dept) ? "#c8102e" : "#0c1d3d",
+                          }}
+                        >
+                          {dept}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">
+                      Anything else you'd like us to know? <span className="text-subtle font-normal">(optional)</span>
+                    </label>
+                    <textarea name="message" rows={3} placeholder="Skills, availability, questions..." className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all resize-none" />
+                  </div>
+
+                  <button type="submit" className="w-full py-3.5 rounded-xl bg-brand text-white font-semibold text-[15px] hover:bg-brand-dark transition-colors mt-1">
+                    Sign Up to Serve
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
