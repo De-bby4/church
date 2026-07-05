@@ -2,24 +2,24 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import heroImg from "../assets/hero.jpg";
 
-const YT_API_KEY = "AIzaSyCRvvgIUjyhc9gaqNypfDSpT4ae5Pzx_Fk";
+const YT_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const CHANNEL_HANDLE = "citadelfellowship";
 
 const SERVICES = [
   {
-    day: "Wednesday",
+    day: "WEDNESDAY",
     time: "7PM",
     detail: "On Microsoft Teams",
     link: "https://bit.ly/4lQtFbJ",
     linkLabel: "bit.ly/4lQtFbJ",
   },
   {
-    day: "Sunday",
+    day: "SUNDAY",
     time: "4PM",
     detail: "College Heights Secondary School, 371 College Ave W, Guelph",
   },
   {
-    day: "Prayerville",
+    day: "PRAVIRVILLE",
     time: "7AM – 12NOON",
     detail: "2nd Saturday of the month · College Heights Secondary School, Guelph",
   },
