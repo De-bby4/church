@@ -26,7 +26,30 @@ import p23 from "../assets/p23.jpg";
 import p24 from "../assets/p24.jpg";
 import p26 from "../assets/p26.jpg";
 import p27 from "../assets/p27.jpg";
+import p28 from "../assets/p28.jpg";
+import p29 from "../assets/p29.jpg";
+import p30 from "../assets/p30.jpg";
+import p31 from "../assets/p31.jpg";
+import p32 from "../assets/p32.jpg";
+import p33 from "../assets/p33.jpg";
+import p34 from "../assets/p34.jpg";
+import p35 from "../assets/p35.jpg";
 import cp1 from "../assets/cp1.jpg";
+import cp2 from "../assets/cp2.jpg";
+import cp3 from "../assets/cp3.jpg";
+import cp4 from "../assets/cp4.jpg";
+import cp5 from "../assets/cp5.jpg";
+import cp6 from "../assets/cp6.jpg";
+import cp7 from "../assets/cp7.jpg";
+import cp8 from "../assets/cp8.jpg";
+import cp9 from "../assets/cp9.jpg";
+import cp10 from "../assets/cp10.jpg";
+import cp11 from "../assets/cp11.jpg";
+import cp12 from "../assets/cp12.jpg";
+import cp13 from "../assets/cp13.jpg";
+import cp14 from "../assets/cp14.jpg";
+
+
 
 // Drop your real photos in here, one per line, in whatever order you like.
 // `position` is optional — controls which part of the photo shows if it
@@ -41,11 +64,11 @@ const PHOTOS = [
   { src: p5, alt: "Citadel Fellowship 5"},
   { src: p6, alt: "Citadel Fellowship 6", position: "top" },
   { src: p7, alt: "Citadel Fellowship 7" },
-  { src: p9, alt: "Citadel Fellowship 8", position: "top" },
+  { src: p33, alt: "Citadel Fellowship 8",  },
   { src: p8, alt: "Citadel Fellowship 9" },
   { src: p10, alt: "Citadel Fellowship 10" },
   { src: p11, alt: "Citadel Fellowship 11" },
-  { src: p27, alt: "Citadel Fellowship 12", position: "top" },
+  { src: p32, alt: "Citadel Fellowship 12", position: "top" },
   { src: p13, alt: "Citadel Fellowship 13" },
   { src: p14, alt: "Citadel Fellowship 14" },
   { src: p15, alt: "Citadel Fellowship 15" },
@@ -58,6 +81,12 @@ const PHOTOS = [
   { src: p22, alt: "Citadel Fellowship 22", position: "top" },
   { src: p26, alt: "Citadel Fellowship 23" },
   { src: p24, alt: "Citadel Fellowship 24" },
+  { src: p28, alt: "Citadel Fellowship 25" },
+  { src: p29, alt: "Citadel Fellowship 26" },
+  { src: p30, alt: "Citadel Fellowship 27" },
+  { src: p31, alt: "Citadel Fellowship 28" },
+  { src: p34, alt: "Citadel Fellowship 29" },
+  { src: p35, alt: "Citadel Fellowship 30" },
 ];
 
 // Kids Ministry photos — separate, smaller set shown in its own uniform
@@ -65,14 +94,22 @@ const PHOTOS = [
 // once you've confirmed parental/photo-release permission for each one.
 // Keep captions generic (activity, not full names) for the same reason.
 const KIDS_PHOTOS = [
-  { src: p23, alt: "Kids Ministry", position: "bottom" },
+  { src: p23, alt: "Kids Ministry", position: "50% 20%" },
   { src: cp1, alt: "Kids Ministry " },
   { src: p12, alt: "Kids Ministry " },
-  { src: p12, alt: "Kids Ministry " },
-  { src: p12, alt: "Kids Ministry " },
-  { src: p12, alt: "Kids Ministry " },
-  { src: p12, alt: "Kids Ministry " },
-  { src: p12, alt: "Kids Ministry " },
+  { src: cp2, alt: "Kids Ministry " },
+  { src: cp3, alt: "Kids Ministry " },
+  { src: cp4, alt: "Kids Ministry " },
+  { src: cp13, alt: "Kids Ministry " },
+  { src: cp6, alt: "Kids Ministry " },
+  { src: cp7, alt: "Kids Ministry " },
+  { src: cp8, alt: "Kids Ministry " },
+  { src: cp9, alt: "Kids Ministry " },
+  { src: cp10, alt: "Kids Ministry " },
+  { src: cp11, alt: "Kids Ministry " },
+  { src: cp12, alt: "Kids Ministry " },
+  { src: cp5, alt: "Kids Ministry " },
+  { src: cp14, alt: "Kids Ministry " },
 ];
 
 const HEIGHTS = ["h-[260px] md:h-[480px]", "h-[160px] md:h-[290px]"];
@@ -248,6 +285,7 @@ export default function GalleryPage() {
                   src={photo.src}
                   alt={photo.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={photo.position ? { objectPosition: photo.position } : undefined}
                 />
               </div>
             ))}

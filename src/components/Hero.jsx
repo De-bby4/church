@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import heroImg from "../assets/hero.jpg";
+import vid from "../video/hero.mp4";
 
 const YT_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const CHANNEL_HANDLE = "citadelfellowship";
 
 const SERVICES = [
   {
-    day: "WEDNESDAY",
+    day: "MIDWEEK SERVICE - WED",
     time: "7PM",
-    detail: "On Microsoft Teams",
+    detail: "BIBLE STUDY & PRAYER",
+    description: "On Microsoft Teams",
     link: "https://bit.ly/4lQtFbJ",
     linkLabel: "bit.ly/4lQtFbJ",
   },
@@ -19,7 +21,7 @@ const SERVICES = [
     detail: "College Heights Secondary School, 371 College Ave W, Guelph",
   },
   {
-    day: "PRAVIRVILLE",
+    day: "PRAYERVILLE",
     time: "7AM – 12NOON",
     detail: "2nd Saturday of the month · College Heights Secondary School, Guelph",
   },
@@ -77,9 +79,18 @@ export default function Hero() {
         id="top"
         className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-ink"
       >
-        {/* Background photo */}
+        {/* Background video */}
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover object-[center_1%]" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={heroImg}
+            className="w-full h-full object-cover object-[center_1%]"
+          >
+            <source src={vid} type="video/mp4" />
+          </video>
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(26,10,62,0.85), rgba(12,29,61,0.4), rgba(22,45,90,0.15))" }} />
         </div>
 
@@ -130,16 +141,21 @@ export default function Hero() {
                   </div>
                   <p className="text-white/55 text-[12px] leading-[1.5]">
                     {s.detail}
-                    {s.link && (
-                      <>
-                        {" "}
-                        —{" "}
-                        <a href={s.link} target="_blank" rel="noreferrer" className="text-brand-light hover:underline">
-                          {s.linkLabel}
-                        </a>
-                      </>
-                    )}
                   </p>
+                  {s.description && (
+                    <p className="text-white/45 text-[11px] mt-1">
+                      {s.description}
+                      {s.link && (
+                        <>
+                          {" "}
+                          —{" "}
+                          <a href={s.link} target="_blank" rel="noreferrer" className="text-brand-light hover:underline">
+                            {s.linkLabel}
+                          </a>
+                        </>
+                      )}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
@@ -159,15 +175,20 @@ export default function Hero() {
                 </p>
                 <p className="text-white/60 text-[12px] mt-0.5">
                   {s.detail}
-                  {s.link && (
-                    <>
-                      :{" "}
-                      <a href={s.link} target="_blank" rel="noreferrer" className="text-brand-light hover:underline">
-                        {s.linkLabel}
-                      </a>
-                    </>
-                  )}
                 </p>
+                {s.description && (
+                  <p className="text-white/45 text-[11px] mt-0.5">
+                    {s.description}
+                    {s.link && (
+                      <>
+                        :{" "}
+                        <a href={s.link} target="_blank" rel="noreferrer" className="text-brand-light hover:underline">
+                          {s.linkLabel}
+                        </a>
+                      </>
+                    )}
+                  </p>
+                )}
               </div>
             ))}
           </div>

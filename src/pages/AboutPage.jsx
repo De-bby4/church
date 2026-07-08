@@ -4,15 +4,23 @@ import aboutImg from "../assets/aboutus.jpg";
 import a0 from "../assets/try.jpeg";
 import husband from "../assets/husband.jpg";
 import slide1 from "../assets/slide1.JPG";
-import slide2 from "../assets/slide2.JPG";
-import slide3 from "../assets/slide3.jpg";
 import slide4 from "../assets/slide4.jpg";
+import g1 from "../assets/g1.jpg";
+import g2 from "../assets/g2.jpg";
+import g3 from "../assets/g3.jpg";
+import g4 from "../assets/g4.jpg";
+import g5 from "../assets/g5.jpg";
+import g6 from "../assets/g6.jpg";
+import g7 from "../assets/g7.jpg";
+import g8 from "../assets/g8.jpg";
+import g9 from "../assets/g9.jpg";
+import g10 from "../assets/g10.jpg";
 import a1 from "../assets/about1.jpg";
 import a2 from "../assets/about2.jpg";
 import a3 from "../assets/about3.jpg";
 import a4 from "../assets/about4.jpg";
 
-const SLIDES = [aboutImg, slide1, slide2, slide3, slide4];
+const SLIDES = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, aboutImg, slide1, slide4];
 
 const HERO_IMAGES = [
   { src: a0, position: "center 50%" },
