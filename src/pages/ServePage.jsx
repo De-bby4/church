@@ -15,7 +15,7 @@ const SLIDES = [s1, s2, s3, s4, s5, s6]; // add serve2, serve3, etc. as you get 
 const DEPARTMENTS = [
   "Media & Sound",
   "Ushering",
-  "Choir / Worship",
+  "Worship Team",
   "Prayer Team",
   "Children's Church",
   "Hospitality",

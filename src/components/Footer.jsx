@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
-          <div>
+          <div id="quick-links">
             <h4 className="font-display font-semibold text-[14px] mb-5 tracking-wide uppercase text-white/70">
               Quick Links
             </h4>
@@ -53,12 +53,16 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-3.5">
               <div>
-                <p className="text-white text-[14px] font-medium">Sunday</p>
+                <p className="text-white text-[14px] font-medium">SUNDAY</p>
                 <p className="text-white/50 text-[13px]">In Person · 4:00 PM</p>
               </div>
               <div>
-                <p className="text-white text-[14px] font-medium">Wednesday</p>
+                <p className="text-white text-[14px] font-medium">MIDWEEK - WED</p>
                 <p className="text-white/50 text-[13px]">Online · 7:00 PM</p>
+              </div>
+              <div>
+                <p className="text-white text-[14px] font-medium">PRAYERVILLE</p>
+                <p className="text-white/50 text-[13px]">In Person · 7:00 AM - 12 NOON</p>
               </div>
             </div>
           </div>

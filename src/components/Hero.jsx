@@ -16,7 +16,7 @@ const SERVICES = [
     linkLabel: "bit.ly/4lQtFbJ",
   },
   {
-    day: "SUNDAY",
+    day: "SUNDAY WORSHIP SERVICE",
     time: "4PM",
     detail: "College Heights Secondary School, 371 College Ave W, Guelph",
   },
@@ -115,12 +115,16 @@ export default function Hero() {
               </svg>
               {loading ? "Checking..." : "Watch Live"}
             </button>
-            <Link
-              to="/#quick-links"
+            <a
+              href="#quick-links"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("quick-links")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/35 text-white font-semibold text-[15px] hover:bg-white/10 hover:border-white/60 transition-all"
             >
               Quick Links
-            </Link>
+            </a>
           </div>
 
           {/* Service times — mobile only */}
