@@ -306,7 +306,7 @@ export default function AboutPage() {
             src={husband}
             alt="Pastor Femmy Joe"
             className="w-full h-full object-cover"
-            style={{ maxHeight: "480px" }}
+            style={{ maxHeight: "480px", objectPosition: "center 20%" }}
           />
         </div>
         <div className="bg-ink py-5 px-5 text-center">

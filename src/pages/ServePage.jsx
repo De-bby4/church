@@ -6,11 +6,8 @@ import s3 from "../assets/s3.jpg";
 import s4 from "../assets/s4.jpg";
 import s5 from "../assets/s5.jpg";
 import s6 from "../assets/s6.jpg";
-// Add more photos here for the slideshow — import them and add to SLIDES below
-// import serve2 from "../assets/serve2.jpeg";
-// import serve3 from "../assets/serve3.jpeg";
 
-const SLIDES = [s1, s2, s3, s4, s5, s6]; // add serve2, serve3, etc. as you get more photos
+const SLIDES = [s1, s2, s3, s4, s5, s6];
 
 const DEPARTMENTS = [
   "Media & Sound",
@@ -158,10 +155,12 @@ export default function ServePage() {
         </div>
       </section>
 
-      {/* Photo slideshow + Why Serve */}
+      {/* Why Serve text + Form */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-10">
-       <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-          <div>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+          {/* Left: Why Serve text */}
+          <div className="lg:sticky lg:top-24">
             <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
               Why Serve?
             </p>
@@ -222,95 +221,102 @@ export default function ServePage() {
               </div>
             </div>
           </div>
-        
 
-         {/* Left: Card Slideshow */}
-          <CardSlideshow />
+          {/* Right: Form */}
+          <div className="bg-surface border border-line rounded-2xl p-7 md:p-9 shadow-soft">
+            <h3 className="font-display font-bold text-ink text-[22px] mb-2 text-center">
+              Get Involved
+            </h3>
+            <p className="text-subtle text-[14px] pb-8 text-center">
+              Fill this out and our team will reach out to help you get started.
+            </p>
+
+            {submitted ? (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <p className="font-display font-semibold text-ink text-[20px] mb-2">
+                  Thank you for stepping up!
+                </p>
+                <p className="text-subtle text-[15px]">
+                  We'll be in touch soon to help you get connected.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-5">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-ink text-[13px] font-semibold pb-1.5 block">First Name</label>
+                      <input type="text" name="firstName" required placeholder="John" className="w-full px-4 py-3 rounded-xl border border-line bg-white text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                    </div>
+                    <div>
+                      <label className="text-ink text-[13px] font-semibold pb-1.5 block">Last Name</label>
+                      <input type="text" name="lastName" required placeholder="Smith" className="w-full px-4 py-3 rounded-xl border border-line bg-white text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">Email Address</label>
+                    <input type="email" name="email" required placeholder="you@email.com" className="w-full px-4 py-3 rounded-xl border border-line bg-white text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                  </div>
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">Phone Number</label>
+                    <input type="tel" name="phone" required placeholder="+1 234 567 890" className="w-full px-4 py-3 rounded-xl border border-line bg-white text-ink text-[14px] outline-none focus:border-brand transition-all" />
+                  </div>
+
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">
+                      Which department(s) interest you?
+                    </label>
+                    <div className="grid grid-cols-2 gap-2.5">
+                      {DEPARTMENTS.map((dept) => (
+                        <button
+                          type="button"
+                          key={dept}
+                          onClick={() => toggleDept(dept)}
+                          className="text-left px-3.5 py-2.5 rounded-lg border text-[13px] font-medium transition-all"
+                          style={{
+                            borderColor: selected.includes(dept) ? "#c8102e" : "#e3e8f0",
+                            background: selected.includes(dept) ? "rgba(200,16,46,0.08)" : "#ffffff",
+                            color: selected.includes(dept) ? "#c8102e" : "#0c1d3d",
+                          }}
+                        >
+                          {dept}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">
+                      Anything else you'd like us to know? <span className="text-subtle font-normal">(optional)</span>
+                    </label>
+                    <textarea name="message" rows={3} placeholder="Skills, availability, questions..." className="w-full px-4 py-3 rounded-xl border border-line bg-white text-ink text-[14px] outline-none focus:border-brand transition-all resize-none" />
+                  </div>
+
+                  <button type="submit" className="w-full py-3.5 rounded-xl bg-brand text-white font-semibold text-[15px] hover:bg-brand-dark transition-colors mt-1">
+                    Sign Up to Serve
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
       </section>
 
-      {/* Form */}
+      {/* Photo slideshow — below */}
       <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
-        <div style={{ maxWidth: "650px", margin: "0 auto" }} className="bg-white border border-line rounded-2xl p-7 md:p-9 shadow-soft">
-          <h3 className="font-display font-bold text-ink text-[22px] mb-2 text-center">
-            Get Involved
-          </h3>
-          <p className="text-subtle text-[14px] pb-8 text-center">
-            Fill this out and our team will reach out to help you get started.
+        <div style={{ maxWidth: "1100px", margin: "0 auto", textAlign: "center" }}>
+          <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
+            Life At Citadel
           </p>
-
-          {submitted ? (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center" style={{ margin: "0 auto 20px" }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <p className="font-display font-semibold text-ink text-[20px] mb-2">
-                Thank you for stepping up!
-              </p>
-              <p className="text-subtle text-[15px]">
-                We'll be in touch soon to help you get connected.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-5">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">First Name</label>
-                    <input type="text" name="firstName" required placeholder="John" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
-                  </div>
-                  <div>
-                    <label className="text-ink text-[13px] font-semibold pb-1.5 block">Last Name</label>
-                    <input type="text" name="lastName" required placeholder="Smith" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-ink text-[13px] font-semibold pb-1.5 block">Email Address</label>
-                  <input type="email" name="email" required placeholder="you@email.com" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
-                </div>
-                <div>
-                  <label className="text-ink text-[13px] font-semibold pb-1.5 block">Phone Number</label>
-                  <input type="tel" name="phone" required placeholder="+1 234 567 890" className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all" />
-                </div>
-
-                <div>
-                  <label className="text-ink text-[13px] font-semibold pb-1.5 block">
-                    Which department(s) interest you?
-                  </label>
-                  <div className="grid grid-cols-2 gap-2.5">
-                    {DEPARTMENTS.map((dept) => (
-                      <button
-                        type="button"
-                        key={dept}
-                        onClick={() => toggleDept(dept)}
-                        className="text-left px-3.5 py-2.5 rounded-lg border text-[13px] font-medium transition-all"
-                        style={{
-                          borderColor: selected.includes(dept) ? "#c8102e" : "#e3e8f0",
-                          background: selected.includes(dept) ? "rgba(200,16,46,0.08)" : "#f5f7fb",
-                          color: selected.includes(dept) ? "#c8102e" : "#0c1d3d",
-                        }}
-                      >
-                        {dept}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-ink text-[13px] font-semibold pb-1.5 block">
-                    Anything else you'd like us to know? <span className="text-subtle font-normal">(optional)</span>
-                  </label>
-                  <textarea name="message" rows={3} placeholder="Skills, availability, questions..." className="w-full px-4 py-3 rounded-xl border border-line bg-surface text-ink text-[14px] outline-none focus:border-brand transition-all resize-none" />
-                </div>
-
-                <button type="submit" className="w-full py-3.5 rounded-xl bg-brand text-white font-semibold text-[15px] hover:bg-brand-dark transition-colors mt-1">
-                  Sign Up to Serve
-                </button>
-              </div>
-            </form>
-          )}
+          <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(24px,3vw,34px)] mb-10">
+            See what serving looks like.
+          </h2>
+          <CardSlideshow />
         </div>
       </section>
     </div>
