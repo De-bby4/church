@@ -125,7 +125,7 @@ export default function ServePage() {
     formData.append("formType", "Serve Sign-Up");
 
     try {
-      await fetch("https://formspree.io/f/xojoajek", {
+      await fetch("https://formspree.io/f/mjgqnvkw", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },
