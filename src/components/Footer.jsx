@@ -73,9 +73,8 @@ export default function Footer() {
               Find Us
             </h4>
             <p className="text-white/50 text-[14px] leading-[1.75] mb-5">
-              College Heights Secondary School<br />
-              371 College Ave W<br />
-              Guelph, ON N1G 1T3
+              551 Victoria Rd North<br />
+              Guelph, ON N1E 7M3
             </p>
             <div className="flex items-center gap-3">
               {/* YouTube */}

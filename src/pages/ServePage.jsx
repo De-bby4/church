@@ -224,7 +224,7 @@ export default function ServePage() {
             {/* Slideshow */}
             <div>
               <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3 text-center ">
-                Life At Citadel
+                Serve At Citadel
               </p>
               <h3 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(20px,2.5vw,26px)] mb-8 text-center ">
                 See what serving looks like.
