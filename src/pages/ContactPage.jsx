@@ -7,7 +7,7 @@ const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(ADDRE
 
 const CONTACT_DETAILS = [
   {
-    label: "Location",
+    label: "Location (Sundays)",
     value: ADDRESS,
     href: MAPS_URL,
     icon: (

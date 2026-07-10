@@ -70,7 +70,7 @@ const PHOTOS = [
   { src: p11, alt: "Citadel Fellowship 11" },
   { src: p6, alt: "Citadel Fellowship 12", position: "top" },
   { src: p13, alt: "Citadel Fellowship 13" },
-  { src: p29, alt: "Citadel Fellowship 14" },
+  { src: p29, alt: "Citadel Fellowship 14", position: "top" },
   { src: p15, alt: "Citadel Fellowship 15" },
   { src: p16, alt: "Citadel Fellowship 16" },
   { src: p28, alt: "Citadel Fellowship 17" },

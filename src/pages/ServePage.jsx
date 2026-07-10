@@ -155,12 +155,12 @@ export default function ServePage() {
         </div>
       </section>
 
-      {/* Why Serve text + Form */}
+      {/* Why Serve text + Slideshow (left) / Form (right) */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-10">
         <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-          {/* Left: Why Serve text */}
-          <div className="lg:sticky lg:top-24">
+          {/* Left: Why Serve text + Slideshow stacked */}
+          <div>
             <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
               Why Serve?
             </p>
@@ -184,7 +184,7 @@ export default function ServePage() {
               </span>
             </p>
 
-            <div className="flex flex-col gap-5 pt-5">
+            <div className="flex flex-col gap-5 pt-5 pb-10">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -219,6 +219,17 @@ export default function ServePage() {
                   <p className="text-subtle text-[14px] mt-0.5">Discover and develop what God has placed in you.</p>
                 </div>
               </div>
+            </div>
+
+            {/* Slideshow */}
+            <div>
+              <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3 text-center ">
+                Life At Citadel
+              </p>
+              <h3 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(20px,2.5vw,26px)] mb-8 text-center ">
+                See what serving looks like.
+              </h3>
+              <CardSlideshow />
             </div>
           </div>
 
@@ -304,19 +315,6 @@ export default function ServePage() {
               </form>
             )}
           </div>
-        </div>
-      </section>
-
-      {/* Photo slideshow — below */}
-      <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
-        <div style={{ maxWidth: "1100px", margin: "0 auto", textAlign: "center" }}>
-          <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3">
-            Life At Citadel
-          </p>
-          <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(24px,3vw,34px)] mb-10">
-            See what serving looks like.
-          </h2>
-          <CardSlideshow />
         </div>
       </section>
     </div>
