@@ -4,16 +4,25 @@ import child from "../assets/child.jpg";
 import Sunday from "../assets/sunday.jpg";
 import midweek from "../assets/midweek.jpg";
 import prayerville from "../assets/prayerville.jpeg";
+import charting from "../assets/charting.png";
 
 const SERVICES = [
   {
-    title: "Sunday Service",
-    mode: "In Person",
-    day: "Every Sunday",
-    time: "4:00 PM",
-    location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
-    desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
-    flyer: Sunday,
+    // title: "Sunday Service",
+    // mode: "In Person",
+    // day: "Every Sunday",
+    // time: "4:00 PM",
+    // location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
+    // desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
+    // flyer: Sunday,
+    // color: "from-[#0c1d3d] to-[#162d5a]",
+    title: "1 YEAR ANNIVERSARY",
+    mode: "Annual",
+    day: "30th August 2026",
+    time: "2:00 PM",
+    location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3" ,
+    desc: "Join us in celebrating God's Faithfulness, as we look forward to all He all has in store for us.",
+    flyer: charting,
     color: "from-[#0c1d3d] to-[#162d5a]",
   },
   {
@@ -36,6 +45,24 @@ const SERVICES = [
     flyer: prayerville,
     color: "from-[#1e3a6e] to-[#0c1d3d]",
   },
+  {
+    // title: "1 YEAR ANNIVERSARY",
+    // mode: "Annual",
+    // day: "30th August 2026",
+    // time: "2:00 PM",
+    // location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3" ,
+    // desc: "Join us in celebrating God's Faithfulness, as we look forward to all He all has in store for us.",
+    // flyer: charting,
+    // color: "from-[#0c1d3d] to-[#162d5a]",
+     title: "Sunday Service",
+    mode: "In Person",
+    day: "Every Sunday",
+    time: "4:00 PM",
+    location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
+    desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
+    flyer: Sunday,
+    color: "from-[#0c1d3d] to-[#162d5a]",
+  }
 ];
 
 
@@ -45,15 +72,15 @@ export default function ServicesPage() {
       {/* Page title banner */}
       
       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-        <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
+        <img src={charting} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">
-          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
-            Our Services
+          <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,1vw,52px)]">
+            HAPPY 1st ANNIVERSARY
           </h1>
           <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
             <p className="text-white/60 text-[16px] leading-[1.8]">
-              Join us as we worship, grow, and encounter God together.
+              {/* Join us as we worship, grow, and encounter God together. */}
             </p>
           </div>
         </div>
