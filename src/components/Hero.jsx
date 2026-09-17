@@ -27,6 +27,12 @@ const SERVICES = [
   },
 ];
 
+const VISION_POINTS = [
+  "that is fully formed in Christ",
+  "that serves GOD's agenda",
+  "that is fully empowered to reign in the earth",
+];
+
 export default function Hero() {
   const [loading, setLoading] = useState(false);
 
@@ -166,35 +172,58 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Service times card — desktop only, floating bottom-right */}
-        <div className="hidden md:block absolute bottom-8 right-8 z-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6" style={{ maxWidth: "300px" }}>
-          <p className="text-brand-light text-[11px] font-bold tracking-[2px] uppercase mb-4">
-            Join Us This Week
-          </p>
-          <div className="flex flex-col gap-3.5">
-            {SERVICES.map((s) => (
-              <div key={s.day}>
-                <p className="text-white text-[13px] font-semibold">
-                  {s.day.toUpperCase()} - {s.time}
+        {/* Right-side info stack — desktop only: Vision box on top, service times below.
+            Mobile users see the Vision content on the About page instead. */}
+        <div className="hidden md:flex flex-col gap-4 absolute bottom-8 right-8 z-10" style={{ maxWidth: "300px" }}>
+
+          {/* Vision box — styled to match the service card below it */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+            <p className="text-brand-light text-[11px] font-bold tracking-[2px] uppercase mb-2.5">
+              Our Vision
+            </p>
+            <p className="text-white text-[13px] font-semibold mb-1.5">
+              Raising a generation
+            </p>
+            <div className="flex flex-col gap-0.5">
+              {VISION_POINTS.map((point) => (
+                <p key={point} className="text-white/60 text-[12px] leading-[1.5] flex items-start gap-1.5">
+                  <span className="text-brand-light mt-[1px]">•</span>
+                  <span>{point}</span>
                 </p>
-                <p className="text-white/60 text-[12px] mt-0.5">
-                  {s.detail}
-                </p>
-                {s.description && (
-                  <p className="text-white/45 text-[11px] mt-0.5">
-                    {s.description}
-                    {s.link && (
-                      <>
-                        :{" "}
-                        <a href={s.link} target="_blank" rel="noreferrer" className="text-brand-light hover:underline">
-                          {s.linkLabel}
-                        </a>
-                      </>
-                    )}
+              ))}
+            </div>
+          </div>
+
+          {/* Service times card */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+            <p className="text-brand-light text-[11px] font-bold tracking-[2px] uppercase mb-4">
+              Join Us This Week
+            </p>
+            <div className="flex flex-col gap-3.5">
+              {SERVICES.map((s) => (
+                <div key={s.day}>
+                  <p className="text-white text-[13px] font-semibold">
+                    {s.day.toUpperCase()} - {s.time}
                   </p>
-                )}
-              </div>
-            ))}
+                  <p className="text-white/60 text-[12px] mt-0.5">
+                    {s.detail}
+                  </p>
+                  {s.description && (
+                    <p className="text-white/45 text-[11px] mt-0.5">
+                      {s.description}
+                      {s.link && (
+                        <>
+                          :{" "}
+                          <a href={s.link} target="_blank" rel="noreferrer" className="text-brand-light hover:underline">
+                            {s.linkLabel}
+                          </a>
+                        </>
+                      )}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

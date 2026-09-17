@@ -292,6 +292,26 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Vision — mobile only (desktop shows this in the Hero section instead) */}
+      <section className="md:hidden py-12 px-6" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+        <div style={{ maxWidth: "500px", margin: "0 auto", textAlign: "center" }}>
+          <p className="text-brand-light text-[11px] font-bold tracking-[3px] uppercase mb-4">
+            Our Vision
+          </p>
+          <p className="font-display font-bold text-white text-[20px] leading-[1.5] pb-4">
+            Raising a generation
+          </p>
+          <div className="flex flex-col gap-2" style={{ textAlign: "left", maxWidth: "420px", margin: "0 auto" }}>
+            {["that is fully formed in Christ", "that serves GOD's agenda", "that is fully empowered to reign in the earth"].map((point) => (
+              <p key={point} className="text-white/80 text-[15px] leading-[1.5] flex items-start gap-2">
+                <span className="text-brand-light mt-[2px]">•</span>
+                <span>{point}</span>
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
     {/* Leadership — Pastor Femmy Joe */}
 <section className="bg-surface py-20 md:py-28 px-6 md:px-10">
   <div
