@@ -228,22 +228,26 @@ export default function AboutPage() {
   return (
     <div className="pt-20 bg-ink">
 
-      <section className="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden">
+      <section className="relative py-[85.5px] md:py-[125px] px-6 md:px-10 overflow-hidden">
   <HeroFadeSlideshow images={HERO_IMAGES} />
   <div className="absolute inset-0 bg-ink/80" />
 
   <div className="relative z-10 flex flex-col items-center text-center">
-    <p className="text-brand-light text-[24px] font-bold tracking-[3px] uppercase mb-4">
-      Who We Are
+    <p className="text-brand-light text-[28px] md:text-[32px] font-bold tracking-[3px] uppercase mb-4">
+      Our Vision
     </p>
 
-    <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[30px]">
-      Knowing Christ. Making Him Known.
-    </h1>
-
-    <p className="mt-4 max-w-[700px] text-white/65 text-[17px] leading-[1.5]">
-      Helping people find God, grow in faith, and walk in purpose together.
+    <p className="font-display font-bold text-white text-[24px] md:text-[34px] leading-[1.5] mb-5">
+      Raising a generation
     </p>
+    <div className="flex flex-col gap-2" style={{ textAlign: "left", maxWidth: "520px", margin: "0 auto" }}>
+      {["that is fully formed in Christ", "that serves GOD's agenda", "that is fully empowered to reign in the earth"].map((point) => (
+        <p key={point} className="text-white/85 text-[17px] md:text-[19px] leading-[1.5] flex items-start gap-2">
+          <span className="text-brand-light mt-[2px]">•</span>
+          <span>{point}</span>
+        </p>
+      ))}
+    </div>
   </div>
 </section>
 
@@ -289,26 +293,6 @@ export default function AboutPage() {
 
           {/* Card Slideshow */}
           <CardSlideshow />
-        </div>
-      </section>
-
-      {/* Vision — mobile only (desktop shows this in the Hero section instead) */}
-      <section className="md:hidden py-12 px-6" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
-        <div style={{ maxWidth: "500px", margin: "0 auto", textAlign: "center" }}>
-          <p className="text-brand-light text-[11px] font-bold tracking-[3px] uppercase mb-4">
-            Our Vision
-          </p>
-          <p className="font-display font-bold text-white text-[20px] leading-[1.5] pb-4">
-            Raising a generation
-          </p>
-          <div className="flex flex-col gap-2" style={{ textAlign: "left", maxWidth: "420px", margin: "0 auto" }}>
-            {["that is fully formed in Christ", "that serves GOD's agenda", "that is fully empowered to reign in the earth"].map((point) => (
-              <p key={point} className="text-white/80 text-[15px] leading-[1.5] flex items-start gap-2">
-                <span className="text-brand-light mt-[2px]">•</span>
-                <span>{point}</span>
-              </p>
-            ))}
-          </div>
         </div>
       </section>
 

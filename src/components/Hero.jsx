@@ -27,11 +27,11 @@ const SERVICES = [
   },
 ];
 
-const VISION_POINTS = [
-  "that is fully formed in Christ",
-  "that serves GOD's agenda",
-  "that is fully empowered to reign in the earth",
-];
+// const VISION_POINTS = [
+//   "that is fully formed in Christ",
+//   "that serves GOD's agenda",
+//   "that is fully empowered to reign in the earth",
+// ];
 
 export default function Hero() {
   const [loading, setLoading] = useState(false);
@@ -105,10 +105,17 @@ export default function Hero() {
           <h1 className="font-display font-bold text-white leading-[1.05] tracking-tight text-[clamp(40px,7vw,70px)] max-w-[820px]">
             THE DWELLING PLACE
           </h1>
-          <p className="text-white/70 text-[13px] md:text-[16px] leading-[1.75] max-w-[750px] pt-1">
+          <p className="text-white/70 text-[13px] md:text-[16px] leading-[1.75] max-w-[750px] pt-1 pb-3">
             Welcome to Citadel Fellowship. The name Citadel is deeply significant as it reflects the divine function and mandate entrusted to the ministry, to stand as a spiritual fortress and stronghold in the land. The name embodies the purpose for which God has established this ministry.
             <br />We are glad you are here. May you find purpose as you journey with us in Jesus Name.
           </p>
+
+          {/* Vision box */}
+          <div className="mt-4 max-w-[750px] rounded-xl border border-white/25 bg-white/5 px-4 py-3">
+            <p className="text-white text-[12px] md:text-[13px] leading-[1.6]">
+              <span className="text-brand-light font-bold">OUR VISION:</span> Raising a generation that is fully formed in Christ, serves GOD's agenda, and empowered to reign in the earth
+            </p>
+          </div>
 
           <div className="flex flex-wrap items-center gap-3.5 pt-7">
             <button
@@ -172,27 +179,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right-side info stack — desktop only: Vision box on top, service times below.
+        {/* Right-side info stack — desktop only: service times card.
             Mobile users see the Vision content on the About page instead. */}
         <div className="hidden md:flex flex-col gap-4 absolute bottom-8 right-8 z-10" style={{ maxWidth: "300px" }}>
-
-          {/* Vision box — styled to match the service card below it */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-            <p className="text-brand-light text-[11px] font-bold tracking-[2px] uppercase mb-2.5">
-              Our Vision
-            </p>
-            <p className="text-white text-[13px] font-semibold mb-1.5">
-              Raising a generation
-            </p>
-            <div className="flex flex-col gap-0.5">
-              {VISION_POINTS.map((point) => (
-                <p key={point} className="text-white/60 text-[12px] leading-[1.5] flex items-start gap-1.5">
-                  <span className="text-brand-light mt-[1px]">•</span>
-                  <span>{point}</span>
-                </p>
-              ))}
-            </div>
-          </div>
 
           {/* Service times card */}
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">

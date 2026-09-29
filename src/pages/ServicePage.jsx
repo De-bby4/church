@@ -8,61 +8,14 @@ import charting from "../assets/charting.png";
 
 const SERVICES = [
   {
-    // title: "Sunday Service",
-    // mode: "In Person",
-    // day: "Every Sunday",
-    // time: "4:00 PM",
-    // location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
-    // desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
-    // flyer: Sunday,
-    // color: "from-[#0c1d3d] to-[#162d5a]",
-    title: "1 YEAR ANNIVERSARY",
-    mode: "Annual",
-    day: "30th August 2026",
-    time: "2:00 PM",
-    location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3" ,
-    desc: "Join us in celebrating God's Faithfulness, as we look forward to all He all has in store for us.",
-    flyer: charting,
-    color: "from-[#0c1d3d] to-[#162d5a]",
-  },
-  {
-    // title: "Wednesday Service",
-    // mode: "Online",
-    // day: "Every Wednesday",
-    // time: "7:00 PM",
-    // location: "Microsoft Teams",
-    // desc: "Join our midweek service to recharge and refocus from the comfort of your home, Bible Study & Prayer.",
-    // flyer: midweek,
-    // color: "from-[#162d5a] to-[#1e3a6e]",
-     title: "Sunday Service",
+    title: "Sunday Service",
     mode: "In Person",
     day: "Every Sunday",
-    // time: "4:00 PM",
-    time: "1:00 PM",
+    time: "4:00 PM",
     location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
     desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
     flyer: Sunday,
     color: "from-[#0c1d3d] to-[#162d5a]",
-  },
-  {
-    // title: "PRAYERVILLE",
-    // mode: "Monthly",
-    // day: "Every 2nd Saturday",
-    // time: "7:00 AM - 12:00 PM",
-    // location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3" ,
-    // desc: "PRAYERVILLE is a non-denominational Prayer Convergence and a consecrated gathering designed to bring hearts into alignment with God's eternal purposes, foster deepening intimacy through a lifestyle of consistent prayer, and transform ordinary men into divine instruments through whom God expresses His Glory across the land.",
-    // flyer: prayerville,
-    // color: "from-[#1e3a6e] to-[#0c1d3d]",
-      title: "Wednesday Service",
-    mode: "Online",
-    day: "Every Wednesday",
-    time: "7:00 PM",
-    location: "Microsoft Teams",
-    desc: "Join our midweek service to recharge and refocus from the comfort of your home, Bible Study & Prayer.",
-    flyer: midweek,
-    color: "from-[#162d5a] to-[#1e3a6e]",
-  },
-  {
     // title: "1 YEAR ANNIVERSARY",
     // mode: "Annual",
     // day: "30th August 2026",
@@ -71,6 +24,26 @@ const SERVICES = [
     // desc: "Join us in celebrating God's Faithfulness, as we look forward to all He all has in store for us.",
     // flyer: charting,
     // color: "from-[#0c1d3d] to-[#162d5a]",
+  },
+  {
+    title: "Wednesday Service",
+    mode: "Online",
+    day: "Every Wednesday",
+    time: "7:00 PM",
+    location: "Microsoft Teams",
+    desc: "Join our midweek service to recharge and refocus from the comfort of your home, Bible Study & Prayer.",
+    flyer: midweek,
+    color: "from-[#162d5a] to-[#1e3a6e]",
+    //  title: "Sunday Service",
+    // mode: "In Person",
+    // day: "Every Sunday",
+    // time: "1:00 PM",
+    // location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
+    // desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
+    // flyer: Sunday,
+    // color: "from-[#0c1d3d] to-[#162d5a]",
+  },
+  {
     title: "PRAYERVILLE",
     mode: "Monthly",
     day: "Every 2nd Saturday",
@@ -79,7 +52,16 @@ const SERVICES = [
     desc: "PRAYERVILLE is a non-denominational Prayer Convergence and a consecrated gathering designed to bring hearts into alignment with God's eternal purposes, foster deepening intimacy through a lifestyle of consistent prayer, and transform ordinary men into divine instruments through whom God expresses His Glory across the land.",
     flyer: prayerville,
     color: "from-[#1e3a6e] to-[#0c1d3d]",
-  }
+    //   title: "Wednesday Service",
+    // mode: "Online",
+    // day: "Every Wednesday",
+    // time: "7:00 PM",
+    // location: "Microsoft Teams",
+    // desc: "Join our midweek service to recharge and refocus from the comfort of your home, Bible Study & Prayer.",
+    // flyer: midweek,
+    // color: "from-[#162d5a] to-[#1e3a6e]",
+  },
+  
 ];
 
 
@@ -89,7 +71,7 @@ export default function ServicesPage() {
       {/* Page title banner */}
       
       <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
-        <img src={charting} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
+        <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">
           <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,1vw,52px)]">
