@@ -228,7 +228,7 @@ export default function AboutPage() {
   return (
     <div className="pt-20 bg-ink">
 
-      <section className="relative py-[117.5px] md:py-[178px] px-6 md:px-10 overflow-hidden">
+      <section className="relative py-[100.75px] md:py-[175px] px-6 md:px-10 overflow-hidden">
   <HeroFadeSlideshow images={HERO_IMAGES} />
   <div className="absolute inset-0 bg-ink/80" />
 
@@ -237,8 +237,8 @@ export default function AboutPage() {
       Our Vision
     </p>
 
-    <div className="rounded-xl border border-white/25 bg-white/5 px-4 py-3" style={{ maxWidth: "750px" }}>
-      <p className="text-white text-[12px] md:text-[13px] leading-[1.6]">
+    <div className="rounded-xl border border-white/25 bg-white/5 px-4 py-3" style={{ maxWidth: "950px" }}>
+      <p className="text-white text-[15px] md:text-[17px] leading-[1.6]">
         Raising a generation that is fully formed in Christ, serves GOD's agenda, and empowered to reign in the earth
       </p>
     </div>
