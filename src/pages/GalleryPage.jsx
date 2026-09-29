@@ -343,32 +343,6 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Church Documentary */}
-      <section className="bg-surface py-16 md:py-24 px-6 md:px-10">
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <p className="text-brand text-[12px] font-bold tracking-[3px] uppercase mb-3 text-center">
-            Church Documentary
-          </p>
-          <h2 className="font-display font-bold text-ink leading-[1.15] tracking-tight text-[clamp(24px,3vw,32px)] text-center pb-10">
-            The Story Behind Citadel Fellowship.
-          </h2>
-
-          <div
-            className="rounded-2xl overflow-hidden border border-line shadow-soft bg-black"
-            style={{ maxWidth: "900px", margin: "0 auto", aspectRatio: "16 / 9" }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/xNyVtdSCN4U"
-              title="Citadel Fellowship Documentary"
-              className="w-full h-full"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Instagram CTA */}
       <section className="bg-ink py-14 md:py-16 px-6 md:px-10">
         <div style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
