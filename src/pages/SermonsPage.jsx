@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import sermon from "../assets/sermonn.jpg";
 
+const YT_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+const CHANNEL_HANDLE = "citadelfellowship";
+const MAX_SHORTS = 20;
 
+// Fallback list — shown until the channel fetch resolves, and kept if the
+// API call fails so the grid is never empty.
 const SHORTS = [
   { id: "My8o4Q00JAs", title: "The Lords Planting (I)" },
   { id: "cPoXwJ72cnI", title: "The Lord's Plainting (II)" },
@@ -24,6 +29,51 @@ const SHORTS = [
   { id: "na04u36O75k", title: "The #2 Requirement of a Steward | 1 Corinthians 4:2" },
   { id: "gp_cLYFLZZw", title: "The #3 Requirement of a Steward | 1 Corinthians 4:2" },
 ];
+
+// YouTube reports duration as an ISO 8601 string, e.g. "PT1M4S" or "PT45S".
+function durationInSeconds(iso) {
+  const match = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/.exec(iso || "");
+  if (!match) return Infinity;
+  const [, hours, minutes, seconds] = match;
+  return Number(hours || 0) * 3600 + Number(minutes || 0) * 60 + Number(seconds || 0);
+}
+
+// Latest uploads from the channel, keeping only Shorts (3 minutes or less),
+// newest first and capped at MAX_SHORTS so older ones drop off the bottom.
+async function fetchLatestShorts() {
+  const channelRes = await fetch(
+    `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forHandle=${CHANNEL_HANDLE}&key=${YT_API_KEY}`
+  );
+  const channelData = await channelRes.json();
+  const uploadsId = channelData?.items?.[0]?.contentDetails?.relatedPlaylists?.uploads;
+  if (!uploadsId) throw new Error("uploads playlist not found");
+
+  const listRes = await fetch(
+    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsId}&maxResults=50&key=${YT_API_KEY}`
+  );
+  const listData = await listRes.json();
+  const uploads = (listData?.items || [])
+    .map((item) => ({
+      id: item.snippet?.resourceId?.videoId,
+      title: item.snippet?.title || "",
+    }))
+    .filter((v) => v.id && v.title !== "Private video" && v.title !== "Deleted video");
+  if (!uploads.length) throw new Error("no uploads");
+
+  const detailsRes = await fetch(
+    `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${uploads
+      .map((v) => v.id)
+      .join(",")}&key=${YT_API_KEY}`
+  );
+  const detailsData = await detailsRes.json();
+  const durations = new Map(
+    (detailsData?.items || []).map((v) => [v.id, durationInSeconds(v.contentDetails?.duration)])
+  );
+
+  return uploads
+    .filter((v) => durations.get(v.id) !== undefined && durations.get(v.id) <= 180)
+    .slice(0, MAX_SHORTS);
+}
 
 const CHANNEL_URL = "https://youtube.com/@citadelfellowship?si=z9fSZrDviKTDtq6f";
 
@@ -71,11 +121,11 @@ function ShortCard({ short, onOpen }) {
   );
 }
 
-function ShortsGrid({ onOpen }) {
+function ShortsGrid({ shorts, onOpen }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-      {SHORTS.map((short, i) => (
-        <ShortCard key={i} short={short} onOpen={onOpen} />
+      {shorts.map((short, i) => (
+        <ShortCard key={short.id || i} short={short} onOpen={onOpen} />
       ))}
     </div>
   );
@@ -127,6 +177,21 @@ function ShortModal({ short, onClose }) {
 
 export default function SermonsPage() {
   const [activeShort, setActiveShort] = useState(null);
+  const [shorts, setShorts] = useState(SHORTS);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchLatestShorts()
+      .then((latest) => {
+        if (!cancelled && latest.length) setShorts(latest);
+      })
+      .catch(() => {
+        // API unavailable — keep the fallback list
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <div className="pt-20 bg-ink">
@@ -171,7 +236,7 @@ export default function SermonsPage() {
             Quick Words, Straight To The Heart.
           </h2>
 
-          <ShortsGrid onOpen={setActiveShort} />
+          <ShortsGrid shorts={shorts} onOpen={setActiveShort} />
         </div>
       </section>
 
