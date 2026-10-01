@@ -101,7 +101,7 @@ export default function Hero() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 md:px-10 pb-10 md:pb-20 pt-32 max-w-[1200px] mx-auto w-full animate-fadeUp">
+        <div className="relative z-10 px-6 md:px-10 pb-6 md:pb-8 pt-32 max-w-[1200px] mx-auto w-full animate-fadeUp">
           <h1 className="font-display font-bold text-white leading-[1.05] tracking-tight text-[clamp(40px,7vw,70px)] max-w-[820px]">
             THE DWELLING PLACE
           </h1>
@@ -111,8 +111,8 @@ export default function Hero() {
           </p>
 
           {/* Vision box */}
-          <div className="mt-4 max-w-[750px] rounded-xl border border-white/25 bg-white/5 px-4 py-3">
-            <p className="text-white text-[13px] md:text-[16px] leading-[1.6]">
+          <div className="mt-4 w-fit max-w-full rounded-xl border border-white/25 bg-white/5 px-4 py-3">
+            <p className="text-white text-[13px] md:text-[14px] leading-[1.6]">
               <span className="text-brand-light font-bold">OUR VISION:</span> Raising a generation that is fully formed in Christ, serves GOD's agenda, and empowered to reign in the earth
             </p>
           </div>
