@@ -27,19 +27,16 @@ const HERO_IMAGES = [
   { src: a1, position: "center 50%" },
   { src: a2, position: "center 50%" },
   { src: a3, position: "center 50%" },
-  { src: a4, position: " 30%" },
+  { src: a4, position: "20%" },
 ];
 
-function getObjectPositionClass(position) {
-  if (!position) return "object-center";
-  if (position === "top") return "object-top";
-  if (position === "bottom") return "object-bottom";
-  if (position === "center") return "object-center";
-  // Full CSS-style value like "center 50%" or "bottom 40%" — just needs
-  // spaces turned into underscores for Tailwind's arbitrary value syntax.
-  if (position.includes(" ")) return `object-[${position.replace(/\s+/g, "_")}]`;
+function getObjectPosition(position) {
+  if (!position) return "center";
+  if (position === "top" || position === "bottom" || position === "center") return position;
+  // Full CSS-style value like "center 50%" or "bottom 40%".
+  if (position.includes(" ")) return position.trim();
   // A lone value like "30%" — treat it as a vertical focus point.
-  return `object-[center_${position}]`;
+  return `center ${position}`;
 }
 
 // Crossfades through a set of background images — each one fades in while
@@ -61,8 +58,9 @@ function HeroFadeSlideshow({ images, intervalMs = 3500, fadeMs = 1500 }) {
           key={i}
           src={img.src}
           alt=""
-          className={`absolute inset-0 w-full h-full object-cover ${getObjectPositionClass(img.position)}`}
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
+            objectPosition: getObjectPosition(img.position),
             opacity: i === index ? 1 : 0,
             transform: `scale(${img.zoom || 1})`,
             transition: `opacity ${fadeMs}ms ease-in-out`,
@@ -227,23 +225,22 @@ function CardSlideshow() {
 export default function AboutPage() {
   return (
     <div className="pt-20 bg-ink">
+      <section className="relative py-[89px] md:py-[148px] px-6 md:px-10 overflow-hidden">
+        <HeroFadeSlideshow images={HERO_IMAGES} />
+        <div className="absolute inset-0 bg-ink/80" />
 
-      <section className="relative py-[100.75px] md:py-[175px] px-6 md:px-10 overflow-hidden">
-  <HeroFadeSlideshow images={HERO_IMAGES} />
-  <div className="absolute inset-0 bg-ink/80" />
+        <div className="relative z-10 flex flex-col items-center text-center">
+          <p className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)] mb-4">
+            Our Vision
+          </p>
 
-  <div className="relative z-10 flex flex-col items-center text-center">
-    <p className="text-brand-light text-[28px] md:text-[32px] font-bold tracking-[3px] uppercase mb-4">
-      Our Vision
-    </p>
-
-    <div className="rounded-xl border border-white/25 bg-white/5 px-4 py-3" style={{ maxWidth: "950px" }}>
-      <p className="text-white text-[15px] md:text-[17px] leading-[1.6]">
-        Raising a generation that is fully formed in Christ, serves GOD's agenda, and empowered to reign in the earth
-      </p>
-    </div>
-  </div>
-</section>
+          <div className="rounded-xl border border-white/25 bg-white/5 px-4 py-3" style={{ maxWidth: "950px" }}>
+            <p className="text-white text-[15px] md:text-[17px] leading-[1.6]">
+              Raising a generation that is fully formed in Christ, serves GOD's agenda, and empowered to reign in the earth
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Story */}
       <section className="bg-white py-20 md:py-28 px-6 md:px-10">
@@ -290,80 +287,80 @@ export default function AboutPage() {
         </div>
       </section>
 
-    {/* Leadership — Pastor Femmy Joe */}
-<section className="bg-surface py-20 md:py-28 px-6 md:px-10">
-  <div
-    style={{ maxWidth: "1100px", margin: "0 auto" }}
-    className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center"
-  >
-    {/* Photo */}
-    <div className="order-2 lg:order-1 flex">
-      <div className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white w-full">
-        <div className="max-h-[480px]">
-          <img
-            src={husband}
-            alt="Pastor Femmy Joe"
-            className="w-full h-full object-cover"
-            style={{ maxHeight: "480px", objectPosition: "center 20%" }}
-          />
+      {/* Leadership — Pastor Femmy Joe */}
+      <section className="bg-surface py-20 md:py-28 px-6 md:px-10">
+        <div
+          style={{ maxWidth: "1100px", margin: "0 auto" }}
+          className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center"
+        >
+          {/* Photo */}
+          <div className="order-2 lg:order-1 flex">
+            <div className="rounded-2xl overflow-hidden border border-line shadow-soft bg-white w-full">
+              <div className="max-h-[480px]">
+                <img
+                  src={husband}
+                  alt="Pastor Femmy Joe"
+                  className="w-full h-full object-cover"
+                  style={{ maxHeight: "480px", objectPosition: "center 20%" }}
+                />
+              </div>
+              <div className="bg-ink py-5 px-5 text-center">
+                <p className="font-display font-semibold text-white text-[20px]">
+                  Pastor Femmy Joe
+                </p>
+                <p className="text-white/55 text-[14px] mt-1">
+                  Lead Pastor
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Write-up */}
+          <div className="order-1 lg:order-2 self-center">
+            <p className="text-brand text-[35px] font-bold tracking-[3px] uppercase pb-2">
+              Meet The Leadership
+            </p>
+
+            <p className="text-ink/70 italic text-[14.5px] leading-[1.6] border-l-[3px] border-brand pl-5 pb-2">
+              "And I will give you shepherds according to My heart, who will
+              feed you with knowledge and understanding."
+              <span className="block text-brand text-[12px] font-semibold mt-2 not-italic">
+                — Jeremiah 3:15 NKJV
+              </span>
+            </p>
+
+            <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.5] pt-4">
+              <p>
+                Pastor Femmy Joe is a minister of the Gospel with a passion for
+                awakening genuine love for God and inspiring believers to live
+                active, expressive, and Christ-centered lives.
+              </p>
+
+              <p>
+                He has served in pastoral and media leadership roles across
+                several ministries, including The Redeemed Christian Church of
+                God, as Music Pastor at River of Life International Fellowship,
+                and as Head of the Media Unit for Remnant Christian Network North
+                America. He is a graduate of RCN Theological Seminary – Adullam
+                (2021).
+              </p>
+
+              <p>
+                He received the call to pulpit ministry in 2016, and after a
+                prolonged season of prayer, the Lord instructed him to raise
+                intercessors for the city of Guelph and Wellington County,
+                leading to the birth of The Watchmen Prayer Group in January
+                2022, a daily prayer movement that continues today.
+              </p>
+
+              <p>
+                In 2024, the Lord gave clarity for the establishment of
+                Citadel Fellowship, which officially began on August 30, 2025.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="bg-ink py-5 px-5 text-center">
-          <p className="font-display font-semibold text-white text-[20px]">
-            Pastor Femmy Joe
-          </p>
-          <p className="text-white/55 text-[14px] mt-1">
-            Lead Pastor
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Write-up */}
-    <div className="order-1 lg:order-2 self-center">
-      <p className="text-brand text-[35px] font-bold tracking-[3px] uppercase pb-2">
-        Meet The Leadership
-      </p>
-
-      <p className="text-ink/70 italic text-[14.5px] leading-[1.6] border-l-[3px] border-brand pl-5 pb-2">
-        "And I will give you shepherds according to My heart, who will
-        feed you with knowledge and understanding."
-        <span className="block text-brand text-[12px] font-semibold mt-2 not-italic">
-          — Jeremiah 3:15 NKJV
-        </span>
-      </p>
-
-      <div className="flex flex-col gap-4 text-subtle text-[15.5px] leading-[1.5] pt-4">
-        <p>
-          Pastor Femmy Joe is a minister of the Gospel with a passion for
-          awakening genuine love for God and inspiring believers to live
-          active, expressive, and Christ-centered lives.
-        </p>
-
-        <p>
-          He has served in pastoral and media leadership roles across
-          several ministries, including The Redeemed Christian Church of
-          God, as Music Pastor at River of Life International Fellowship,
-          and as Head of the Media Unit for Remnant Christian Network North
-          America. He is a graduate of RCN Theological Seminary – Adullam
-          (2021).
-        </p>
-
-        <p>
-          He received the call to pulpit ministry in 2016, and after a
-          prolonged season of prayer, the Lord instructed him to raise
-          intercessors for the city of Guelph and Wellington County,
-          leading to the birth of The Watchmen Prayer Group in January
-          2022, a daily prayer movement that continues today.
-        </p>
-
-        <p>
-          In 2024, the Lord gave clarity for the establishment of
-          Citadel Fellowship, which officially began on August 30, 2025.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Church Documentary */}
       <section className="bg-white py-16 md:py-24 px-6 md:px-10">

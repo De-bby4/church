@@ -176,7 +176,7 @@ export default function GalleryPage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
-      <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+      <section className="relative py-[109px] md:py-[160px] px-6 md:px-10 text-center overflow-hidden" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
         <img src={gallery} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
                <div className="absolute inset-0 bg-ink/80" />
                <div className="relative z-10">

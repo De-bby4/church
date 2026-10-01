@@ -88,7 +88,7 @@ export default function ContactPage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
-      <section className="relative overflow-hidden py-24 md:py-32 px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+      <section className="relative overflow-hidden py-[95px] md:py-[132px] px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
          <img src={contact} alt="" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: "center 56%"}} />
                   <div className="absolute inset-0 bg-ink/80" />
                   <div className="relative z-10 flex flex-col items-center text-center">

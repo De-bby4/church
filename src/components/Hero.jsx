@@ -17,7 +17,7 @@ const SERVICES = [
   },
   {
     day: "SUNDAY WORSHIP SERVICE",
-    time: "4PM",
+    time: "1PM",
     detail: "College Heights Secondary School, 371 College Ave W, Guelph",
   },
   {
@@ -112,7 +112,7 @@ export default function Hero() {
 
           {/* Vision box */}
           <div className="mt-4 max-w-[750px] rounded-xl border border-white/25 bg-white/5 px-4 py-3">
-            <p className="text-white text-[12px] md:text-[13px] leading-[1.6]">
+            <p className="text-white text-[13px] md:text-[16px] leading-[1.6]">
               <span className="text-brand-light font-bold">OUR VISION:</span> Raising a generation that is fully formed in Christ, serves GOD's agenda, and empowered to reign in the earth
             </p>
           </div>

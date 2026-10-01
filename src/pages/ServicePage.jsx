@@ -11,7 +11,7 @@ const SERVICES = [
     title: "Sunday Service",
     mode: "In Person",
     day: "Every Sunday",
-    time: "4:00 PM",
+    time: "1:00 PM",
     location: "College Heights Secondary School, 371 College Ave W, Guelph, ON N1G 1T3",
     desc: "Our main weekly gathering worship, the Word, fellowship, and Children's Church for the kids. Come as you are and experience God with us.",
     flyer: Sunday,
@@ -70,7 +70,7 @@ export default function ServicesPage() {
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
       
-      <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
+      <section className="relative py-[119px] md:py-[184.5px] px-6 md:px-10 text-center overflow-hidden">
         <img src={serviceImg} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 50%" }} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">

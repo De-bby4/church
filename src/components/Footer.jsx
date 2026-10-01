@@ -54,7 +54,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3.5">
               <div>
                 <p className="text-white text-[14px] font-medium">SUNDAY</p>
-                <p className="text-white/50 text-[13px]">In Person · 4:00 PM</p>
+                <p className="text-white/50 text-[13px]">In Person · 1:00 PM</p>
               </div>
               <div>
                 <p className="text-white text-[14px] font-medium">MIDWEEK - WED</p>

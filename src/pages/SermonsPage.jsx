@@ -131,7 +131,7 @@ export default function SermonsPage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page banner */}
-     <section className="relative py-24 md:py-36 px-6 md:px-10 text-center overflow-hidden">
+     <section className="relative py-[48px] md:py-[117px] px-6 md:px-10 text-center overflow-hidden">
         <img src={sermon} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 20%" }} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">

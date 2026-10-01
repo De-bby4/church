@@ -141,14 +141,14 @@ export default function ServePage() {
   return (
     <div className="pt-20 bg-ink">
       {/* Page title banner */}
-      <section className="relative overflow-hidden py-24 md:py-36 px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
+      <section className="relative overflow-hidden py-[104px] md:py-[152px] px-6 md:px-10 text-center" style={{ background: "linear-gradient(135deg, #1a0a3e 0%, #0c1d3d 50%, #162d5a 100%)" }}>
         <img src={serve} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 40%" }} />
         <div className="absolute inset-0 bg-ink/80" />
         <div className="relative z-10">
           <h1 className="font-display font-bold text-white leading-[1.1] tracking-tight text-[clamp(34px,5vw,52px)]">
             Serve With Us
           </h1>
-          <p className="text-white/50 text-[16px] leading-[1.7] mt-4" style={{ maxWidth: "550px", margin: "16px auto 0" }}>
+          <p className="text-white/50 text-[15px] leading-[1.5] mt-4" style={{ maxWidth: "550px", margin: "0 auto" }}>
             Every gift matters. Discover where you can plug in and use what God
             has given you to build His Kingdom.
           </p>
